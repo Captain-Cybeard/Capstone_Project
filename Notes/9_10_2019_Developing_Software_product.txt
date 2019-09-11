@@ -16,7 +16,7 @@ Given that detailed information  is unavailable
 To accomplish that, must work with customer to
    understand problem domain well enough to 
    determine purpose of application and context
-   within which it will oeprate
+   within which it will operate
 
 Scope, in addition to context, also includes 
    constraints imposed on application and any 
@@ -36,9 +36,9 @@ This decomposition is perfomred according to major
    the software engineering process to be applied
    in developing it.
 
----------------------------------------------------
-           Software Engineering Process
----------------------------------------------------
+-----------------------------------------------------
+             Software Engineering Process
+-----------------------------------------------------
 Project manage is usually responsible for selecting
    process
 
@@ -52,3 +52,29 @@ Once scope is determined and process selected,
    project may be decomposed into a set of tasks that 
    may be estimated and perfomred to complete project.
 
+-----------------------------------------------------
+        Project, organized to enable completion
+-----------------------------------------------------
+Projects can fail for a variety of reasons:
+   - Developers do not understand needs of customer.
+   - Deadlines are unrealistic
+   - Developers do not have necessary skills
+
+To avoid these problems, project manager needs to take 
+   care in building the right team, and providing them
+   with the necessary resources to perform the work 
+   throughout the project.
+
+Project manager must set realistic expectations
+
+Project manager must insulate team from management, 
+   customers, and users as much as possible to develop 
+   software, removing any obstactls to success
+
+Through formal reviews and informal communication with 
+   members of team, project manager needs to track 
+   progress through development to maintain quality and 
+   head off problems before they grow out of control.
+
+Project managers should choose simple solutions whenever
+   possible.
