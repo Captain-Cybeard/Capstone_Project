@@ -1,0 +1,54 @@
+  -------------------------------------------------
+          Software Product to be Developed
+--------------------------------------------------
+
+From Customer Perspective,
+   - What do I get?
+   - When will I get it?
+   - How much will it cost me?
+
+Scope of Project
+
+Given that detailed information  is unavailable 
+   about the product, first step is to determine 
+   scope to sufficient level of detail.
+
+To accomplish that, must work with customer to
+   understand problem domain well enough to 
+   determine purpose of application and context
+   within which it will oeprate
+
+Scope, in addition to context, also includes 
+   constraints imposed on application and any 
+   performance characteristics required of app.
+
+Scope in project plan is written at a fairly 
+   high level in terms customer can understand
+
+Scope also appears in requirements specification,
+   decomposed to much greater degree
+
+Scope in project plan is decomposed just enough 
+   to develop good estimates of time and schedule
+
+This decomposition is perfomred according to major 
+   functions to be delivered by application and 
+   the software engineering process to be applied
+   in developing it.
+
+---------------------------------------------------
+           Software Engineering Process
+---------------------------------------------------
+Project manage is usually responsible for selecting
+   process
+
+In general, project manager should select the soft-
+   ware engineering porcess most appropriate for the 
+   product to be be developed, the people involved 
+   in the project, and the environment within which 
+   the sw development team will work.
+
+Once scope is determined and process selected, 
+   project may be decomposed into a set of tasks that 
+   may be estimated and perfomred to complete project.
+
