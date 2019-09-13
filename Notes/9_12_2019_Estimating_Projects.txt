@@ -1,0 +1,39 @@
+--------------------------------------------------------------
+			  Estimating
+--------------------------------------------------------------
+
+Estimating time and schedule is an important part of project
+   planning.
+
+After scope of project has been decomposed into major functions 
+   to be performed by application and software engineering 
+   process has been selected, estimates of time can be determined
+   by project manager with assistance of SW development team.
+
+Can Organize this information in form of table, where SW 
+   development tasks to be performed are listed under activities 
+   of selective SW development process.
+
+No attempt is made at this point to indicate duration over which 
+   estimate time to complete a task will be spread.
+
+This will be accomplished lonter on by expanding table into a 
+   schedule.
+
+Large estimated time --> should decompose tasks further and divide 
+   into subtasks.
+
+Suggest decomposing tasks just far enough during project planning 
+   to enable responsibility for each task to be assigned to an 
+   individual.
+
+Further decomposition of tasks may still be necessary to allow 
+   good estimates to be provided.
+
+Don't underestimate!! Be defensive in estimating. Build 
+   contingencies into estimates.
+
+Project manager should continually manage expectations by 
+   emphasizing that estimates are inexact.
+
+Make customer wait for a good project.
