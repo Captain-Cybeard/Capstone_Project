@@ -1,6 +1,6 @@
---------------------------------------------------------------
-			  Estimating
---------------------------------------------------------------
+-----------------------------------------------------------------
+ 			Estimating Projects
+-----------------------------------------------------------------
 
 Estimating time and schedule is an important part of project
    planning.
@@ -37,3 +37,15 @@ Project manager should continually manage expectations by
    emphasizing that estimates are inexact.
 
 Make customer wait for a good project.
+
+-----------------------------------------------------------------
+ 			     Scheduling
+-----------------------------------------------------------------
+
+Task network in form of graph can be developed indicating 
+   dependencies.
+
+Task network is not required.
+
+Expanding table into a timeline chart or a gantt(?) chart.
+
