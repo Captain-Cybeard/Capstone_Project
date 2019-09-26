@@ -1,0 +1,17 @@
+Project Implementation Estimates:
+
+*Authentication:
+	--> Connection to VMWare
+		--> Authentication with OAuth in Django.
+
+API:
+	--> VMWare API access
+		--> Connect to *Authentication to pass credentials to VMWare.
+		--> GET information to be displayed in Django App (that users can select).
+		--> Based on dropdown selection, make another API call to retrieve the VM.
+
+		
+Django Web Application:
+	--> Backend:
+		-->
+	--> Frontend:
