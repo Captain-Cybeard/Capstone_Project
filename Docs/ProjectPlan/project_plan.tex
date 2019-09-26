@@ -27,6 +27,7 @@
 
     \newpage
     \begin{versionhistory}
+        \vhEntry{0.4}{09.26.2019}{KT}{Filled in Approach section}
         \vhEntry{0.3}{09.24.2019}{RB NF TS KT}{Filled in scope and added diagram}
         \vhEntry{0.2}{09.19.2019}{KT}{Filled in Introduction Section}
         \vhEntry{0.1}{09.12.2019}{KT}{Document Creation}
@@ -46,23 +47,30 @@
     in the form of a Gantt Chart.
 
     \section{Scope}
-    The project is to develop a Python Django web application that allows a user that is logged into the application to enter a URL that points to one of several
+    The project is to develop a Python-Django web application that allows a user that is logged into the application to enter a URL that points to one of several
     possible cloud based VM platforms and be presented with the authentication for that platform. After the user enters their credentials for the VM platform 
     they will be presented with the VM's they have on their account that are available to download.
     
     The application will present relevant information to the user such as the directory structure, names of the VM images, and a way to select which files and folders
     to download to their local machine.
 
-    The first platform to focus on for interacting with will be VMware. Time permitting other platforms such as Amazon Web Services (AWS), Citrix, Google Drive and Dropbox
-    will be added. The application needs to have a modular design so other platforms can be added in the future.
+    The first platform to focus on for interacting with will be VMware. Time permitting, other platforms such as Amazon Web Services (AWS), Citrix, Google Drive and Dropbox
+    will be added. The application will have a modular design so other platforms can be added in the future.
 
     \begin{figure}[h]
     \includegraphics[scale=.7]{diagram}
         \caption{The application environment}
     \end{figure}
 
+    \pagebreak
     \section{Approach}
-    The software engineering approach that will be used for this project is the \textbf{agile} approach.
+    The software engineering approach that will be used for this project is the \textbf{Agile Scrum} approach.
+    This iterative approach will ensure that the software development team will remain on track and that Cipherpath will receive the maximum amount of value
+    for their time.
+
+    The project will be implemented as a Python-Django web application, Python version 3+ and Django version 2+ will be used. The Python-Django framework provides the tools 
+    and environment needed to develop and test a web application such as a lightweight web server and SQLite. For version control the software development team will be using git
+    with a remote repository hosted on Github.
 
     \section{Estimate}
 
