@@ -1,5 +1,0 @@
-The purpose of this project is to develop a Django Web Application that allows 
-   Cypher Path users to enter a URL for online Virtual Machines and have those
-   automatically transferred into Cypher Path. 
-
-Technologies: Python, Django
