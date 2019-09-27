@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{vhistory}
+\usepackage[parfill]{parskip}
+\graphicspath{{./}}
+
+% Set fancy looking header/footer and move page number to the right
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+
+    % For large document with titlepage:
+    \pagenumbering{gobble}
+    \include{titlepage}
+
+    \tableofcontents
+    \listoffigures
+
+    \newpage
+    \begin{versionhistory}
+        \vhEntry{0.1}{09.27.2019}{KT}{Document Creation}
+    \end{versionhistory}
+    \newpage
+
+    \pagenumbering{arabic}
+    \section{Introduction}
+
+    \section{Background}
+
+    \section{Overview}
+
+    \section{Environment}
+
+    \section{Operation}
+
+    \section*{References}
+
+    \appendix
+    \section{Appendix}
+
+\end{document}
