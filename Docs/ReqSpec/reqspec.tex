@@ -27,6 +27,7 @@
 
     \newpage
     \begin{versionhistory}
+        \vhEntry{0.3}{10.15.2019}{TS}{Completed Overview}
         \vhEntry{0.2}{10.10.2019}{RB NF TS KT}{Filled in Environment \& Operation sections}
         \vhEntry{0.1}{09.27.2019}{KT}{Document Creation}
     \end{versionhistory}
@@ -38,7 +39,20 @@
     \section{Background}
 
     \section{Overview}
+    The purpose of this application is to allow users to download files from online Virtual Machines (VM), to local file storage.
+    The application itself will operate in the web browser using Python3 and Django. Upon starting the application the user would
+    provide a URL of their VM. Processing the URL the user is then asked to provide credentials to validate they are the owner of
+    the VM. After completing the verification, the application will then use the API of the client the user has their VM stored on
+    to access their folders. The User will be shown their folder structure and chose to download the files locally to their desktop.
+    Upon acceting to download locally the application will use another API to download the files local to their VM.
 
+    The application will be written with django and python3, including the requests libraries for API calls, SAML for Authentication
+    and standard libraries.
+
+    The application only allows users to view the files from VM's they own, and download those file locally to the machine they 
+    are running the application through. The users will have the ability to provide either a VMWare URL to download from, or a 
+    Amazon Web Service (AWS) VM URL, to download as well. The application will be designed with modularity in mind to allow further 
+    development with different VM service providers.  
     \section{Environment}
 
         \subsection{VMWare (VSphere)}
