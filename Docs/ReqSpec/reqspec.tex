@@ -65,7 +65,7 @@
             \subsubsection{API'S}
             Use VMWare API that looks at file structs.
 
-            Example URL:
+%            Example URL:
 
             \subsubsection{Download Protocol}
             Call downloads to download to local machine.
@@ -78,10 +78,13 @@
             Call download API to download to local machine.
 
         \subsection{Authentication}
+        The Application should retain a user's login token for the various platforms to minimize the frequency they need to authenticate to the different VM platforms.
+        An option for them to log out of these sessions should also be provided.
+
             \subsubsection{VMWare Auth (SAML)}
             Use specific authorization based on the VMWare standard.
 
-            \subsubsection{AWS Auth}
+            \subsubsection{AWS Authentication}
             Use specific authorization based on the AWS standard.
 
         \subsection{Web Page}
