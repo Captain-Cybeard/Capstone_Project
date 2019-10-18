@@ -34,12 +34,31 @@
 
     \pagenumbering{arabic}
     \section{Introduction}
+    % Doc purpose, class, school, what the req specs does
+
+    % What the rest of the document has (sections)
 		
     \section{Background}
+    % About Cypherpath and their resiliency platform
+    % Explain what this application is supposed to solve at a high, nontechnical level
 
     \section{Overview}
+    % How the application will solve the problem, what environment it will run in, language, platform, etc
+    % Overview of what it will do
 
     \section{Environment}
+    The environment that the software will preside in consists of modules to interact with \textbf{VMWare}, 
+    \textbf{AWS}, other virtual machine platforms and will also be interacting with authentication modules for those
+    various platforms. The user will interact with the API's of these cloud services and authentication
+    methods through a Django Web App. Lastly, the environment will consist of the application storing the selected
+    virtual machines onto the user's local machine.
+
+    %%%%%%%%%%%%%%% DIAGRAM STILL NEEDS TO BE FIXED!!! %%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[h]
+    \includegraphics[scale=.7]{diagram}
+        \caption{The application environment}
+    \end{figure}
+    %%%%%%%%%%%%%%% DIAGRAM STILL NEEDS TO BE FIXED!!! %%%%%%%%%%%%%%%%%%%%%%%%%%
 
         \subsection{VMWare (VSphere)}
 
@@ -74,6 +93,9 @@
         \subsection{Database?}
 
     \section{Operation}
+    In the following sections the operation of the application will be described, including starting the application
+    (invocation), the commands the application uses and finally, how to close or terminate the application.
+
         \subsection{Invocation}
             \subsubsection{Web Application}
 
@@ -92,8 +114,12 @@
             \subsubsection{Closing Application}
 
     \section*{References}
+    % Reference the project plan?
+    % Possibly reference documentation to the various API's?
 
     \appendix
     \section{Appendix}
+    % Sample files, if any?
+    % Maybe a sketch of the general page layout?
 
 \end{document}
