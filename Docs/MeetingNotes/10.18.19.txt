@@ -1,0 +1,11 @@
+Specific class interfaces for modules?
+    No specific requirements as long is its the same
+
+Keep auth token and if so how long?
+    Keep it, server has a ttl
+
+Leave database as SQLite, doesn't sound like anything will be put in it
+
+Admin page doesn't need to do anything, just leave it alone
+
+Restful API was mentioned. It may help with authentication.

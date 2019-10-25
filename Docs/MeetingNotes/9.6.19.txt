@@ -1,0 +1,19 @@
+First Meeting
+
+Making a webapp to authenticate to VMware & AWS then list available images to download.
+Citrix, Google Drive, Dropbox added later, maybe use OpenID.
+
+They are more interested in authentication part and interfacing with API's.
+
+Environment -> basic Django Server
+
+User Flow:
+user logs in (optional?)
+user inputs a URL to their VM's, app figures out what service it is (AWS, VMware, etc)
+    or if it cant, it asks the user
+user now authenticates to the externel service, we possibly store token for repeated use
+use is presented with a list of available downloads, distinguish between folders/files.
+    Support filesystem nagivation
+user can multiselect files/folders, possibly drag 'n drop.
+
+Cypherpath uses Typescript instead of Javascript
