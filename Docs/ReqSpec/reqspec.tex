@@ -35,29 +35,37 @@
 
     \pagenumbering{arabic}
     \section{Introduction}
-    This application is to give the user the ability to download their virtual machines for upload to Cypherpath’s resiliency platform. It will be a Django web application in python3. The user will be able to get the virtual machines they have in the VMWare cloud and AWS cloud. It should detect what service is from the URL supplied by the user. The user will be given a selectable list of virtual machines on their desired cloud service for them to chose from. The user will select from the list and download the wanted virtual machine. The virtual machine will then be downloaded to the local computer. 
-    The requirements from Cypherpath are detailed here in how Cypherpath desires to accomplish this program. This program will later be expanded by Cypherpath to be integrated into their software.     
+    The requirements specification document is to go over the requirements for %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    This application is to give the user the ability to download their virtual machines for upload to Cypherpath’s resiliency platform.
+    It will be a Django web application in Python3. The user will be able to get the virtual machines they have in the VMware cloud and AWS cloud.
+    It should detect what service is from the URL supplied by the user. The user will be given a selectable list of virtual machines on
+    their desired cloud service for them to chose from. The user will select from the list and download the wanted virtual machine.
+    The virtual machine will then be downloaded to the local computer. The requirements from Cypherpath are detailed here in how Cypherpath desires to
+    accomplish this program. This program will later be expanded by Cypherpath to be integrated into their software.     
     
+
     \section{Background}
     % About Cypherpath and their resiliency platform
     % Explain what this application is supposed to solve at a high, nontechnical level
 
-    \section{Overview}
 
+    \section{Overview}
     The purpose of this application is to allow users to download files from online Virtual Machines (VM), to local file storage.
     The application itself will operate in the web browser using Python3 and Django. Upon starting the application the user would
     provide a URL of their VM. Processing the URL the user is then asked to provide credentials to validate they are the owner of
     the VM. After completing the verification, the application will then use the API of the client the user has their VM stored on
     to access their folders. The User will be shown their folder structure and chose to download the files locally to their desktop.
-    Upon acceting to download locally the application will use another API to download the files local to their VM.
+    Upon accepting to download locally the application will use another API to download the files local to their VM.
 
-    The application will be written with django and python3, including the requests libraries for API calls, SAML for Authentication
+    The application will be written with Django and Python3, including the requests libraries for API calls, SAML for Authentication
     and standard libraries.
 
     The application only allows users to view the files from VM's they own, and download those file locally to the machine they 
-    are running the application through. The users will have the ability to provide either a VMWare URL to download from, or a 
-    Amazon Web Service (AWS) VM URL, to download as well. The application will be designed with modularity in mind to allow further 
+    are running the application through. The users will have the ability to provide either a VMWare URL to download from, or an
+    Amazon Web Services (AWS) VM URL. The application will be designed with modularity in mind to allow further 
     development with different VM service providers.  
+
+
     \section{Environment}
     The environment that the software will preside in consists of modules to interact with \textbf{VMWare}, 
     \textbf{AWS}, other virtual machine platforms and will also be interacting with authentication modules for those
@@ -106,6 +114,7 @@
         \subsection{Download Structure}
 
         \subsection{Database?}
+
 
     \section{Operation}
     In the following sections the operation of the application will be described, including starting the application
