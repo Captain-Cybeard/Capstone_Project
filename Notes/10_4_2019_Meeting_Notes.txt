@@ -1,0 +1,11 @@
+VMWare Filestore,
+LongStory short --> Only need basic Auth, oince we know what protocol they use.
+Don't worry about user help docs.
+
+User will only be entering the IP or the URL of the deployment.
+
+Noah: Look into what it will take to actually authenticate VMWare.
+
+Use decorators. 
+
+VSphere is what we're going to be using. Saml functionality.
