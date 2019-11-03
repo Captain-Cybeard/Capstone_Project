@@ -1,0 +1,16 @@
+Don't worry about retaining a history of visited VM's for now, focus on the core functionality.
+
+Use Django User's model to have the users log into the application itself. Don't bother with user admin pages
+or anything, just create a test user or two on the CLI.
+
+Store user name, email and address don't need to have anything else. The user is just a formality.
+
+SDK's may be overkill and make all sorts of calls and things you don't need, you may need to go through the SDK code
+and find the function calls inside that you need and take those out. But if we have to use the whole SDK then that is
+fine.
+
+Will be downloading the entire virtual disk image, not snapshots or "junk files" for now.
+
+Once that is working if we can then we may want to "chunk" downloads instead of a stream for several advantages, then
+if we really want to we can have a "smart" algorithm for dynamic chunk sizing.
+
