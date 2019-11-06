@@ -4,7 +4,7 @@
 \usepackage{graphicx}
 \usepackage{vhistory}
 \usepackage[parfill]{parskip}
-\graphicspath{{./}}
+\graphicspath{{../Images/}}
 
 % Set fancy looking header/footer and move page number to the right
 \pagestyle{fancy}
@@ -23,6 +23,7 @@
 
     \newpage
     \begin{versionhistory}
+        \vhEntry{0.7}{10.29.2019}{NF}{Edits to while doc}
         \vhEntry{0.6}{10.29.2019}{KT}{Edits}
         \vhEntry{0.5}{10.28.2019}{NF}{Background}
         \vhEntry{0.4}{10.28.2019}{RB}{Introduction}
@@ -42,18 +43,11 @@
     Subsequent sections will include some background information on Cypherpath and their Resiliency Platform, an overview of the application and what it
     is supposed to accomplish, the environment the application will execute in, and finally, how users will interact the application.
 
-%%%    This application is to give the user the ability to download their virtual machines for upload to Cypherpath’s resiliency platform.
-%%%    It will be a Django web application in Python3. The user will be able to get the virtual machines they have in the VMware cloud and AWS cloud.
-%%%    It should detect what service is from the URL supplied by the user. The user will be given a selectable list of virtual machines on
-%%%    their desired cloud service for them to chose from. The user will select from the list and download the wanted virtual machine.
-%%%    The virtual machine will then be downloaded to the local computer. The requirements from Cypherpath are detailed here in how Cypherpath desires to
-%%%    accomplish this program. This program will later be expanded by Cypherpath to be integrated into their software.     
-    
 
     \section{Background}
-    Cypherpath has a platform as a service called Cypherpath Resiliency Platform where their customers can upload machines, networks, storage and applications into
-    self-contained digital environments, enabling customers to quickly recover from attacks. Right now, customers have to manually download their Virtual Machines from
-    the various platforms they are hosted on and then upload those to the Resiliency Platform. Cypherpath would like a web application that simplifies this for users.
+	The Cypherpath Resiliency Platform tool is a product that gives customers the ability to upload virtual machine files and network configurations into 
+    self-contained digital environments, enabling customers to quickly recover from ransomware attacks. Right now, customers have to manually download their Virtual Machine files from
+    the various platforms they are hosted on and then upload those to the Resiliency Platform. Cypherpath would like a web application that simplifies file downloading for users.
 
 	This project aims to give Cypherpath users a simple means of retrieving Virtual Machine snapshots from different websites and plaftorms, while making it easy to 
 	then upload those snapshots to Cypherpath's Resiliency Platform, providing more value to the customer in the process.
@@ -78,60 +72,17 @@
 
     \section{Environment}
 
-    %%%%% DELETE ME LATER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % sections: web app
-    %           vm apis (VMware, AWS)
-    %           authentication modules
-    %           local hard drive? (for saving files)
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     The environment that the software will preside in consists of modules to interact with VMware, 
     AWS, other virtual machine platforms and will also be interacting with authentication modules for those
     various platforms. The user will interact with the API's of these cloud services and authentication
     methods through a Django Web App. Lastly, the environment will consist of the application storing the selected
     virtual machines onto the user's local machine.
 
-    %%%%%%%%%%%%%%% DIAGRAM STILL NEEDS TO BE FIXED!!! %%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[h]
-    \includegraphics[scale=.7]{diagram}
+    \includegraphics[scale=.4]{downloader_env}
         \caption{A visual representation of the applications environment.}
     \end{figure}
-    %%%%%%%%%%%%%%% DIAGRAM STILL NEEDS TO BE FIXED!!! %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%        \subsection{VMWare (VSphere)}
-%%%%%
-%%%%%            \subsubsection{API'S}
-%%%%%            Use VMWare API that looks at file structs.
-%%%%%
-%%%%%%            Example URL:
-%%%%%
-%%%%%            \subsubsection{Download Protocol}
-%%%%%            Call downloads to download to local machine.
-%%%%%
-%%%%%        \subsection{AWS}
-%%%%%            \subsubsection{API'S}
-%%%%%            Use AWS API that looks at file structs.
-%%%%%
-%%%%%            \subsubsection{Download Protocol}
-%%%%%            Call download API to download to local machine.
-%%%%%
-%%%%%        \subsection{Authentication}
-%%%%%        The Application should retain a user's login token for the various platforms to minimize the frequency they need to authenticate to the different VM platforms.
-%%%%%        An option for them to log out of these sessions should also be provided.
-%%%%%
-%%%%%            \subsubsection{VMWare Auth (SAML)}
-%%%%%            Use specific authorization based on the VMWare standard.
-%%%%%
-%%%%%            \subsubsection{AWS Authentication}
-%%%%%            Use specific authorization based on the AWS standard.
-%%%%%
-%%%%%        \subsection{Web Page}
-%%%%%            \subsubsection{Django}
-%%%%%            Provide input box for URL: should also provide login and logout usage.
-%%%%%
-%%%%%        \subsection{Download Structure}
-%%%%%
-%%%%%        \subsection{Database?}
-%%%%%
 
         \subsection{Web Application}
         The software will interact with user as a web application. The web application will prompt the user for things such as
