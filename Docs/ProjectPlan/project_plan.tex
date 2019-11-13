@@ -23,10 +23,12 @@
     \include{titlepage}
 
     \tableofcontents
+    \newpage
     \listoffigures
 
     \newpage
     \begin{versionhistory}
+        \vhEntry{1.1}{11.12.2019}{KT}{Performed Edits}
         \vhEntry{1.0}{09.27.2019}{RB NF TS KT}{Completed Document}
         \vhEntry{0.5}{09.27.2019}{RB}{Filled in Estimate section}
         \vhEntry{0.4}{09.26.2019}{KT}{Filled in Approach section}
@@ -44,6 +46,11 @@
     servers. The purpose of the project plan is to provide a roadmap for CypherPath and the software development
     team of the development process and help keep track of the progress.
 
+    Cypherpath is a company that provides a product called \textit{Resiliency Platform Tool} that stores virtual networks, machines, configurations and more
+    enabling their customers to quickly recover from cyber attacks such as ransomware. Currently, customers need to manually download their virtual disk images from
+    the various cloud platforms they are subscribed to (such as VMware or Amazon Web Services) and then upload them to Cypherpath's platform. This application will allow
+    customers to have their virtual disk images transferred directly into the Resiliency Platform.
+
     Subsequent sections of this project plan will cover the scope of the project, the software engineering
     approach that will be used for the project and an estimate for how long the project will take broken by task
     in the form of a Gantt Chart.
@@ -51,7 +58,8 @@
     \section{Scope}
     The project is to develop a Python-Django web application that allows a user that is logged into the application to enter a URL that points to one of several
     possible cloud based VM platforms and be presented with the authentication for that platform. After the user enters their credentials for the VM platform 
-    they will be presented with the VM's they have on their account that are available to download.
+    they will be presented with the virtual disk images they have on their account that are available to download. These virtual disk images are Cypherpath's customers
+    virtualized appliances that are used for their business tasks.
     
     The application will present relevant information to the user such as the directory structure, names of the VM images, and a way to select which files and folders
     to download to their local machine.
@@ -72,17 +80,13 @@
 
     The project will be implemented as a Python-Django web application, Python version 3+ and Django version 2+ will be used. The Python-Django framework provides the tools 
     and environment needed to develop and test a web application such as a lightweight web server and SQLite. For version control the software development team will be using git
-    with a remote repository hosted on Github.
+    with a remote repository hosted on Github. Once the project is completed, Cypherpath will host the web application within their infrastructure.
 
     \section{Estimate}
     The project is estimated to take two academic semesters in order to complete collecting requirements, designing, implementation and testing. The estimated date
     to complete the project is Wednesday April 4th, 2020.
 
+    \Huge \textbf{INCLUDE TOTAL ESTIMATED HOURS HERE!}
+
     The following pages will contain a breakdown of the tasks and estimated time to complete them for the project.
-
-%    \section{References}
-%
-%    \appendix
-%    \section{Appendix}
-
 \end{document}
