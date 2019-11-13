@@ -35,13 +35,13 @@
 
     \pagenumbering{arabic}
     \section{Introduction}
-    The requirements specification document is to go over the requirements for the Virtual Machine Downloader for Cypherpath's Resiliency Platform.
-    The document will cover how the application will provide a solution for users to easily upload their Virtual Machine's to the Resiliency Platform and also
+    The requirements specification document is to go over the requirements for the Virtual Machine file Downloader for Cypherpath's Resiliency Platform.
+    This document will cover how the application will provide a solution for users to easily upload their Virtual Machine files to the Resiliency Platform and also
     go in depth on how the users will interact with the application through a web interface. This document is intended to be understood and agreed
     upon by both the customer (Cypherpath) and the software development team (Captian CyBeard).
 
     Subsequent sections will include some background information on Cypherpath and their Resiliency Platform, an overview of the application and what it
-    is supposed to accomplish, the environment the application will execute in, and finally, how users will interact the application.
+    is supposed to accomplish the environment the application will execute in, and finally, how users will interact the application.
 
 
     \section{Background}
@@ -49,12 +49,12 @@
     self-contained digital environments, enabling customers to quickly recover from ransomware attacks. Right now, customers have to manually download their Virtual Machine files from
     the various platforms they are hosted on and then upload those to the Resiliency Platform. Cypherpath would like a web application that simplifies file downloading for users.
 
-	This project aims to give Cypherpath users a simple means of retrieving Virtual Machine snapshots from different websites and plaftorms, while making it easy to 
-	then upload those snapshots to Cypherpath's Resiliency Platform, providing more value to the customer in the process.
+	This project aims to give Cypherpath users a simple means of retrieving Virtual Machine files from different websites and plaftorms, while making it easy to 
+	then upload those files to Cypherpath's Resiliency Platform, providing more value to the customer in the process.
 
 
     \section{Overview}
-    The purpose of this application is to allow users to download files from online Virtual Machines (VMs), to local file storage.
+    The purpose of this application is to allow users to download the vm file from an online Virtual Machine (VM), to local file storage.
     The application itself will operate in the web browser using Python3 and Django. Upon starting the application the user would
     provide a URL of their VM. Processing the URL the user is then asked to provide credentials to validate they are the owner of
     the VM. After completing the verification, the application will then use the API of the client the user has their VM stored on
@@ -75,7 +75,7 @@
     The environment that the software will preside in consists of modules to interact with VMware, 
     AWS, other virtual machine platforms and will also be interacting with authentication modules for those
     various platforms. The user will interact with the API's of these cloud services and authentication
-    methods through a Django Web App. Lastly, the environment will consist of the application storing the selected
+    methods through a Django Web Application. Lastly, the environment will consist of the application storing the selected
     virtual machines onto the user's local machine.
 
     \begin{figure}[h]
@@ -85,9 +85,6 @@
 
 
         \subsection{Web Application}
-        The software will interact with user as a web application. The web application will prompt the user for things such as
-        where their VM services are, and which files to download as well as display information to the user such as what files are available to download.
-
         The web server that serves the application will be Django's built in development server and when the project is completed, Cypherpath will integrate
         the web application into their existing ecosystem.
 
@@ -117,7 +114,7 @@
         \subsection{Invocation}
         Since the application will be integrated into Cypherpath's platform, the application will be started using Django's built-in development webserver and
         the user will not need to be authenticated to use the application. To invoke the application the user will simply enter the URL that the application is running on and will
-        be presented with the first screen of the application.
+        be presented with the screen of the application.
 
         Initially the user will be displayed with an area to enter a URL that their VM's reside at (An AWS or VMware link). If the user has previously entered and logged into one of these
         URL's before then they will also have a list of these to log back into them.
