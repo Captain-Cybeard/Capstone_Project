@@ -1,16 +1,22 @@
 \documentclass{article}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=1.25in]{geometry}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{vhistory}
 \usepackage[parfill]{parskip}
 \graphicspath{{../Images/}}
 
+\renewcommand{\baselinestretch}{1.5}
+
 % Set fancy looking header/footer and move page number to the right
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
 \fancyfoot[R]{\thepage}
+
+\patchcmd{\section}{-3.5ex \@plus -1ex \@minus -.2ex}{-3.5ex \@plus -1ex \@minus -.2ex\setlength{\leftskip}{0cm}}{}{}
+\patchcmd{\subsection}{-3.25ex\@plus -1ex \@minus -.2ex}{3.25ex\@plus -1ex \@minus -.2ex\setlength{\leftskip}{1cm}}{}{}
+\patchcmd{\subsubsection}{1.5ex \@plus .2ex}{1.5ex \@plus .2ex\setlength{\leftskip}{2cm}}{}{}
 
 \begin{document}
     \pagenumbering{gobble}
@@ -24,6 +30,7 @@
 
     \newpage
     \begin{versionhistory}
+        \vhEntry{1.0}{11.15.2019}{RB NF TS KT}{First Final Doc}
         \vhEntry{0.91}{11.14.2019}{KT}{Spelling \& grammar edits}
         \vhEntry{0.8}{11.12.2019}{TS}{Added more components to subsections for length}
         \vhEntry{0.7}{10.29.2019}{NF}{Edits to whole doc}
@@ -137,6 +144,9 @@
         were provided, will be prompted as such.
 
         \subsection{User Actions}
+        The User Actions subsection covers how the user will interact with the application and how entering the application, displaying the file structure, downloading virtual disk images and error catching 
+        will be implemented.
+
             \subsubsection{Enter URL}
             The user can enter a URL that goes to their cloud platform (VMware or AWS initially). The text box will be centrally located with a design to help users clearly
             see where to input the URL, the box will also have shadow text requesting input. The application will figure out which cloud platform the URL belongs to, through a GET 
