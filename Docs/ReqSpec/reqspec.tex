@@ -49,28 +49,31 @@
     This requirements specification document is to go over the requirements for the Virtual Machine file Downloader for Cypherpath's Resiliency Platform that was outlined in the
     \texttt{Project Plan} \cite{projectplan}.
     The document will cover how the application will provide a solution for users to easily upload their Virtual Machine files to the Resiliency Platform and also
-    go in depth on how the users will interact with the application through a web interface. This document is intended to be understood and agreed
+    go in depth on how the users will interact with the application through a web interface. This document will be understood and agreed
     upon by both the customer (Cypherpath) and the software development team (Captain CyBeard).
 
     Subsequent sections will include some background information on Cypherpath and their Resiliency Platform, an overview of the application and what it
-    is supposed to accomplish, the environment the application will execute in, and finally, how users will interact the application.
+    will do, the environment the application will execute in, and finally, how users will interact the application.
 
-
-    \section{Background}
 	The Cypherpath Resiliency Platform tool is a product that gives customers the ability to upload virtual machines, network configurations and more into 
     self-contained digital environments, enabling customers to quickly recover from attacks such as ransomware. Right now, customers have to manually download their virtual disk images from
     the various platforms they are hosted on, and then upload those to the Resiliency Platform. Cypherpath would like a web application that will enable users to have their virtual disk images go
     directly from the cloud platform into the Resiliency Platform.
-
+	
+    \section{Background}
 	This project aims to give Cypherpath users a simple means of retrieving disk images from different cloud platforms, while making it easy to 
 	then upload those files to Cypherpath's Resiliency Platform, providing more value to the customer in the process.
 
-
+	The Resiliency Platform tool gives organizations the ability to save and backup their network infrastructure as well as the individual machines on that infrastructure in case a situation
+	arises where the network infrastructure is compromised or needs to be reset to an earlier point in time.
+	
+	!! NEED MORE INFO HERE !!
+	
     \section{Overview}
     The purpose of this application is to allow users to download virtual disk images from an online cloud platforms, to local file storage.
     The application itself will operate in the web browser using Python3 and Django. Upon starting the application the user will
     provide a URL to their account on the cloud platform. Processing the URL the user is then asked to provide credentials to validate they are the owner of
-    the account. After authentication, the application will then use the API of the cloud platform and show the user their root directory on the account.
+    the account. After authentication, the application will use the API of the cloud platform and show the user their root directory on the account.
     The User will be able to navigate their directory structure and choose which files and folders to download locally to their desktop.
     Upon accepting to download locally the application will use another API call to download the files onto their PC.
 
@@ -79,17 +82,17 @@
 
     The application only allows users to view the files from VM's they own, and download those file locally to the machine they 
     are running the application through. The users will have the ability to provide either a VMware URL to download from, or an
-    Amazon Web Services (AWS) VM URL. The application will be designed with modularity to allow further 
-    development with different VM service providers such as Citrix, Google Drive and Dropbox.
+    Amazon Web Services (AWS) VM URL. The application will be designed with modularity to allow further development with different 
+	VM service providers such as Citrix, Google Drive and DropBox. If time allows, these will be developed incrementally, with 
+	Citrix being the next highest priority and then Google Drive and DropBox.
 
-
+	?? WHAT IS THE WEBHOST INFORMATION ?? 
+	?? Also, I'm not sure that understand Trevors notes on this ??
+	
     \section{Environment}
-    The environment that the software will preside in consists of modules to interact with VMware, 
-    AWS, other virtual machine platforms and will also be interacting with authentication modules for those
-    various platforms. The user will interact with the API's of these cloud services and authentication
-    methods through a Django Web Application. Lastly, the environment will consist of the application storing the selected
-    virtual machines onto the user's local machine.
-
+	This application will preside in Cyperpath's suite of applications and will connect to cloud services through API calls. 
+    !! NEED MORE INFO FROM CYPHERPATH HERE !!
+	
     \begin{figure}[h]
     \includegraphics[scale=.4]{downloader_env}
         \caption{A visual representation of the applications environment.}
