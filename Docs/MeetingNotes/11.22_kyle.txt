@@ -1,0 +1,17 @@
+Showing of prototype and first draft of requirements.
+
+Prototype:
+    Should authentication be a popup or on its own page? -> doesn't matter, whichever works
+
+    Any more or less details on the files? -> that looks like a good start
+
+    Need to have multi-select for the files and a "select all" button. Don't just assume to select them all.
+
+    Login page (for the application not the cloud platforms) is just a formality, no special requirements.
+    Can have it in or take it out.
+
+
+Requirements stuff:
+    Resiliency copies and runs the VM's
+
+    html & css will be stripped out, only backend matters, should specify that in requirements
