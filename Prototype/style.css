@@ -1,3 +1,6 @@
+h1 {
+    text-align: center;
+}
 
 form {
     padding-top:75px;
@@ -95,6 +98,8 @@ i {
     margin:10px;
     text-decoration:none;
     border-radius:8px;
+    text-align:center;
+    align:center;
 }
 
 .back:hover {
@@ -135,7 +140,7 @@ button:hover {
 
 
 .download {
-    align:center;
+     align:center;
     text-align:center;
     background-color:blue;
     border:0px;
@@ -156,4 +161,9 @@ input[type=checkbox] {
 
 #aclass {
     text-align:left;
+}
+
+#back {
+    text-align:center;
+    align:center;
 }
