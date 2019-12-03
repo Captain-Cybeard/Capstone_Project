@@ -6,24 +6,13 @@
         <h1>Downloader</h1>
 
         <p>
-        <table>
-            <tr>
-                <th>File</th><th>Size</th><th>Date Modified</th>
-            </tr>
-            <tr>
-                <td>server.vdi</td><td>500gb</td><td>1/1/1970</td>
-            </tr>
-            <tr>
-                <td>router.vdi</td><td>20gb</td><td>1/1/1970</td>
-            </tr>
-            <tr>
-                <td>test.vdi</td><td>10gb</td><td>1/1/1970</td>
-            </tr>
-        </table>
-        </p>
-
-        <p>
-        <b><a class="download" href="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.3.11.tar.xz" download>Download</a></b>
+        <form id="aclass" action="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.3.11.tar.xz">
+            <input type="checkbox" onclick="toggle(this)" />Select All <br/>
+            <input type="checkbox" value="ser" name="box">server.vdi - 500GB <br />
+            <input type="checkbox" value="rou" name="box">router.vdi - 20GB <br />
+            <input type="checkbox" value="tes" name="box">test.vdi - 10GB <br />
+            <input type="submit" value="Download">
+        </form>
         </p>
 
         <p>
@@ -34,5 +23,15 @@
         </p>
 
     </body>
+
+    <script>
+        function toggle(source) {
+          checkboxes = document.getElementsByName('box');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+          }
+        }
+    </script>
+
 </html>
 

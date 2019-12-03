@@ -148,3 +148,12 @@ button:hover {
     text-decoration:none;
     border-radius:8px;
 }
+
+input[type=checkbox] {
+    text-align: left;
+    width: 10%;
+}
+
+#aclass {
+    text-align:left;
+}
