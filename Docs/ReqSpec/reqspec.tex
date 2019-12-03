@@ -30,8 +30,10 @@
 
     \newpage
     \begin{versionhistory}
+        \vhEntry{1.2}{12.03.2019}{KT}{Grammar edits and wording}
+        \vhEntry{1.1}{11.16.2019}{NF}{Grammar edits and wording}
         \vhEntry{1.0}{11.15.2019}{RB NF TS KT}{First Final Doc}
-        \vhEntry{0.91}{11.14.2019}{KT}{Spelling \& grammar edits}
+        \vhEntry{0.9}{11.14.2019}{KT}{Spelling \& grammar edits}
         \vhEntry{0.8}{11.12.2019}{TS}{Added more components to subsections for length}
         \vhEntry{0.7}{10.29.2019}{NF}{Edits to whole doc}
         \vhEntry{0.6}{10.29.2019}{KT}{Edits}
@@ -46,7 +48,7 @@
 
     \pagenumbering{arabic}
     \section{Introduction}
-    This requirements specification document is to go over the requirements for the Virtual Machine file Downloader for Cypherpath's Resiliency Platform that was outlined in the
+    This requirements specification document will go over the requirements for the Virtual Machine file Downloader for Cypherpath's Resiliency Platform that was outlined in the
     \texttt{Project Plan} \cite{projectplan}.
     The document will cover how the application will provide a solution for users to easily upload their Virtual Machine files to the Resiliency Platform and also
     go in depth on how the users will interact with the application through a web interface. This document will be understood and agreed
@@ -57,20 +59,20 @@
 
 	The Cypherpath Resiliency Platform tool is a product that gives customers the ability to upload virtual machines, network configurations and more into 
     self-contained digital environments, enabling customers to quickly recover from attacks such as ransomware. Right now, customers have to manually download their virtual disk images from
-    the various platforms they are hosted on, and then upload those to the Resiliency Platform. Cypherpath would like a web application that will enable users to have their virtual disk images go
-    directly from the cloud platform into the Resiliency Platform.
+    the various cloud platforms they are hosted on, and then upload those to the Resiliency Platform. Cypherpath wants a web application that will enable users to have their virtual disk images go
+    directly from the cloud platform into the Resiliency Platform, cutting out the multi-step process of downloading and then uploading the virtual disk images.
 	
     \section{Background}
-	This project aims to give Cypherpath users a simple means of retrieving disk images from different cloud platforms, while making it easy to 
-	then upload those files to Cypherpath's Resiliency Platform, providing more value to the customer in the process.
+	This project will give Cypherpath users a simple means of directly transferring virtual disk images from various cloud platforms directly into
+    Cypherpath's Resiliency Platform, providing more value to the customer in the process.
 
 	The Resiliency Platform tool gives organizations the ability to save and backup their network infrastructure as well as the individual machines on that infrastructure in case a situation
 	arises where the network infrastructure is compromised or needs to be reset to an earlier point in time.
 	
-	!! NEED MORE INFO HERE !!
+	\large !! NEED MORE INFO HERE !!
 	
     \section{Overview}
-    The purpose of this application is to allow users to download virtual disk images from an online cloud platforms, to local file storage.
+    The purpose of this application is to allow users to download virtual disk images from online cloud platforms, to local file storage.
     The application itself will operate in the web browser using Python3 and Django. Upon starting the application the user will
     provide a URL to their account on the cloud platform. Processing the URL the user is then asked to provide credentials to validate they are the owner of
     the account. After authentication, the application will use the API of the cloud platform and show the user their root directory on the account.
@@ -86,11 +88,11 @@
 	VM service providers such as Citrix, Google Drive and DropBox. If time allows, these will be developed incrementally, with 
 	Citrix being the next highest priority and then Google Drive and DropBox.
 
-	?? WHAT IS THE WEBHOST INFORMATION ?? 
+	\large ?? WHAT IS THE WEBHOST INFORMATION ?? 
 	?? Also, I'm not sure that understand Trevors notes on this ??
 	
     \section{Environment}
-	This application will preside in Cyperpath's suite of applications and will connect to cloud services through API calls. 
+	\large This application will preside in Cyperpath's suite of applications and will connect to cloud services through API calls. 
     !! NEED MORE INFO FROM CYPHERPATH HERE !!
 	
     \begin{figure}[h]
@@ -153,7 +155,7 @@
             \subsubsection{Enter URL}
             The user can enter a URL that goes to their cloud platform (VMware or AWS initially). The text box will be centrally located with a design to help users clearly
             see where to input the URL, the box will also have shadow text requesting input. The application will figure out which cloud platform the URL belongs to, through a GET 
-            request to the URL. If an error occurs with the GET request the user will be notified of the error. If the request is successful then the user will have to
+            request to the URL. If an error occurs with the GET request the user will be notified of the error. If the request is successful then the user will be prompted to
             provide their login credentials, on a pop-up screen. The authentication will be verified with the platform they are using, (SAML for VMware and AWS Auth for AWS).
             Once authenticated the application will present the user with their files and folders that are on that platform.
             
