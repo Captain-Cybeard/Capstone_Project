@@ -1,0 +1,6 @@
+Background ->   Get more information to include
+Overview ->     Provide stronger language add the webhost information, later to be implemented into resiliency platform 
+                django webframework, clear up wording. clearer information for parameters. clarity on order of importance
+                for the virtual machines
+Enviroment ->   Grammar, lots of english adjustment... lots... even more... add dots to picuters, below what is known. State 
+                will be done, if complextion occurs, state what could be dropped. more english... 

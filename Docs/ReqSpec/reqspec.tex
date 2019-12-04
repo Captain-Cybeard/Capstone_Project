@@ -30,6 +30,7 @@
 
     \newpage
     \begin{versionhistory}
+        \vhEntry{2.1}{12.04.2019}{TS}{Provided more grammatical checking along with a Reference Recomendation}
         \vhEntry{2.0}{12.04.2019}{KT}{Added priority section \& final edits}
         \vhEntry{1.2}{12.03.2019}{KT}{Grammar edits and wording}
         \vhEntry{1.1}{11.16.2019}{NF}{Grammar edits and wording}
@@ -51,16 +52,16 @@
     \section{Introduction}
     This requirements specification document will go over the requirements for the Virtual Machine file Downloader for Cypherpath's Resiliency Platform that was outlined in the
     \texttt{Project Plan} \cite{projectplan}.
-    The document will cover how the application will provide a solution for users to easily upload their Virtual Machine files to the Resiliency Platform and also
-    go in depth on how the users will interact with the application through a web interface. This document will be understood and agreed
+    The document will cover how the application will provide a solution for users to easily upload their Virtual Machine files to the Resiliency Platform.
+    Providing details on how the users will interact with the application through a web interface. This document will be understood and agreed
     upon by both the customer (Cypherpath) and the software development team (Captain CyBeard).
 
-    Subsequent sections will include some background information on Cypherpath and their Resiliency Platform, an overview of the application and what it
-    will do, the environment the application will execute in, how users will interact the application, and finally, the priority of the cloud platforms that the application will support.
+    Subsequent sections will include, background information on Cypherpath and their Resiliency Platform. An overview of the application, what it
+    will Accomplish. The environment the application will execute in. How users will interact the application. Additionally includes the priority of the cloud platforms that the application will support.
 
-	The Cypherpath Resiliency Platform tool is a product that gives their customers the ability to upload virtual machines, network configurations and more, into 
+	The Cypherpath Resiliency Platform tool is a product that provides their customers the ability to upload virtual machines, network configurations and more, into 
     self-contained digital environments. This enables their customers to quickly recover from attacks such as ransomware. Right now, customers have to manually download their virtual disk images from
-    the various cloud platforms they are hosted on, and then upload those to the Resiliency Platform. Cypherpath wants a web application that will enable users to have their virtual disk images go
+    the various cloud platforms they are hosted on, and then upload those to the Resiliency Platform. Cypherpath has requested a web application that will enable users to have their virtual disk images go
     directly from the cloud platform into the Resiliency Platform, cutting out the multi-step process of downloading and then uploading large virtual disk images.
 	
     \section{Background}
@@ -84,7 +85,7 @@
     Once at the main page the user will
     provide a URL to their account on an external cloud platform. Once the application processes the URL to determine which cloud platform the URL points to, the user is
     then asked to provide their credentials to authenticate
-    to their account on that cloud platform. After authentication, the application will use the API of the cloud platform and show the user their root directory on the account.
+    to that platform. After authentication, the application will use the API of the cloud platform and show the user their Virtual Disk Image (vdi) for that machine.
     The User will be able to navigate their directory structure and select which files and folders to download locally to their desktop.
     When the user clicks the download button the application will use another API call to download the files onto their PC.
 
@@ -115,7 +116,7 @@
 
 
         \subsection{Web Application}
-        The web server that serves the application during development will be Django's built in development server and when the project is completed, Cypherpath will integrate
+        The web server for the application during development will be Django's built in development server and when the project is completed, Cypherpath will integrate
         the web application into their existing ecosystem using their webserver. The Django application will host the functionality of the application, including HTML templates for the 
         web pages, where users provide Virtual Machine URLs and browse their directories. Additionally, the Django framework will allow the usage of python classes that will enable the 
         back-end operation of the application.
@@ -215,6 +216,10 @@
     for Citrix, Google Drive and Dropbox in that order of priority. If the development team does not have time to implement modules for interacting with all of these cloud platforms, then the lowest priority ones will be removed
     from the project. However the requirement is that at least VMware vSphere and Amazon Web Services be supported.
 
+    \section{Priority of Functionality}
+    Cyperpath has requested the ability to download specified files. If the team is unable to provide selectable tabs for individual file downloading the team will prioritize the downloading of only the vdi specific
+    to the machines provided by the user.
+
 
 
     \newpage
@@ -228,6 +233,7 @@
 
 %    \section*{References}
     % Reference the project plan?
+    %(TREVOR) For References we should include Cypherpath website, VMWARE and AWS
     % Possibly reference documentation to the various API's?
 
 %    \appendix
