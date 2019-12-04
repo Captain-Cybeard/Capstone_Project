@@ -30,7 +30,7 @@
 
     \newpage
     \begin{versionhistory}
-        \vhEntry{1.3}{12.04.2019}{KT}{Added priority section \& final edits}
+        \vhEntry{2.0}{12.04.2019}{KT}{Added priority section \& final edits}
         \vhEntry{1.2}{12.03.2019}{KT}{Grammar edits and wording}
         \vhEntry{1.1}{11.16.2019}{NF}{Grammar edits and wording}
         \vhEntry{1.0}{11.15.2019}{RB NF TS KT}{First Final Doc}
@@ -58,20 +58,20 @@
     Subsequent sections will include some background information on Cypherpath and their Resiliency Platform, an overview of the application and what it
     will do, the environment the application will execute in, how users will interact the application, and finally, the priority of the cloud platforms that the application will support.
 
-	The Cypherpath Resiliency Platform tool is a product that gives customers the ability to upload virtual machines, network configurations and more into 
-    self-contained digital environments, enabling customers to quickly recover from attacks such as ransomware. Right now, customers have to manually download their virtual disk images from
+	The Cypherpath Resiliency Platform tool is a product that gives their customers the ability to upload virtual machines, network configurations and more, into 
+    self-contained digital environments. This enables their customers to quickly recover from attacks such as ransomware. Right now, customers have to manually download their virtual disk images from
     the various cloud platforms they are hosted on, and then upload those to the Resiliency Platform. Cypherpath wants a web application that will enable users to have their virtual disk images go
     directly from the cloud platform into the Resiliency Platform, cutting out the multi-step process of downloading and then uploading large virtual disk images.
 	
     \section{Background}
-    Cypherpath's Resiliency Platform had started out as a platform where the U.S. Military could emulate the networks of countries and simulate cyber attacks to
+    Cypherpath's Resiliency Platform started out as a platform where the U.S. Military could emulate the networks of countries and simulate cyber attacks between the countries in order to
     learn about the strength and weaknesses of the countries simulated. After proving its usefulness in this market, Cypherpath entered the commercial market and provides it platform as a service to
     companies and local governments alike to provide resiliency to these entity's network infrastructures. Resiliency in the cyber sense means that systems and networks are secure, recoverable and
-    continuous. Customers of Cypherpath enjoy a readiness of their technological resources and can rapidly adjust and adapt those resources when failures, damages or attacks occur in order to keep their business running smoothly.
+    continuous. Customers of Cypherpath enjoy a readiness of their technological resources, and can rapidly adjust and adapt those resources when failures, damages or attacks occur in order to keep their business running smoothly.
 
     This project will become a component of the Resiliency Platform by enabling Cypherpath's customers to more easily migrate their virtual assets into the platform. Currently customers have to download
     their virtual assets onto their local machine and then upload them into the Resiliency Platform. This project will simplify this process by having the Resiliency Platform download the virtual asset directly
-    into its infrastructure. The software development team will not be integrating the application with the Resiliency Platform. The product to be delivered to Cypherpath will be a standalone web application that downloads
+    into its infrastructure. The software development team will not be integrating the application with the Resiliency Platform. The product delivered to Cypherpath will be a standalone web application that downloads
     digital assets from various cloud platforms. Upon completion of the project, Cypherpath will integrate the web application into their Resiliency Platform.
 
 	%This project will give Cypherpath users a simple means of directly transferring virtual disk images from various cloud platforms directly into
@@ -80,14 +80,15 @@
 	
     \section{Overview}
     The purpose of this application is to allow users to download virtual disk images from online cloud platforms, to local file storage.
-    The application itself will operate as a web server using Python3 and Django2. Users will start the application by navigating to URL pointing to the application.
+    The application itself will operate as a web server using Python3 and Django2. Users will start the application by navigating to the URL pointing to the application.
     Once at the main page the user will
-    provide a URL to their account on an external cloud platform. Processing the URL, the user is then asked to provide their credentials to authenticate
-    to the account. After authentication, the application will use the API of the cloud platform and show the user their root directory on the account.
+    provide a URL to their account on an external cloud platform. Once the application processes the URL to determine which cloud platform the URL points to, the user is
+    then asked to provide their credentials to authenticate
+    to their account on that cloud platform. After authentication, the application will use the API of the cloud platform and show the user their root directory on the account.
     The User will be able to navigate their directory structure and select which files and folders to download locally to their desktop.
     When the user clicks the download button the application will use another API call to download the files onto their PC.
 
-    The application will be written with Django2 and Python3, including the requests libraries for API calls, Authentication libraries like SAML
+    The application will be written with Python3 and Django2, including the requests libraries for API calls, Authentication libraries like SAML
     and standard libraries. To install the application, Cypherpath will integrate the Django web application into their environment along with installing (if not installed already)
     the libraries for interacting with the external cloud platforms and authentication API's. Users of the application will not need to install any software since most operating systems come
     with a web browser which will interact with the application on the user's end.
@@ -105,7 +106,7 @@
 	%\large This application will preside in Cyperpath's suite of applications and will connect to cloud services through API calls. 
     %!! NEED MORE INFO FROM CYPHERPATH HERE !!
     The next sections will go over the environment the application will reside in. This will include the web application, authentication API's, cloud storage API's and the local storage
-    of the machine running the application (during development this will be the users machine, but Cypherpath will be using their storage scheme for production).
+    of the machine running the application. During development this will be the users machine, but Cypherpath will be using their storage scheme for production.
 	
     \begin{figure}[h]
     \includegraphics[scale=.4]{downloader_env}
@@ -114,9 +115,9 @@
 
 
         \subsection{Web Application}
-        The web server that serves the application will be Django's built in development server and when the project is completed, Cypherpath will integrate
+        The web server that serves the application during development will be Django's built in development server and when the project is completed, Cypherpath will integrate
         the web application into their existing ecosystem using their webserver. The Django application will host the functionality of the application, including HTML templates for the 
-        web pages, where users provide Virtual Machine URLs and browse their directories. Additionally the Django framework will allow the usage of python classes that will enable the 
+        web pages, where users provide Virtual Machine URLs and browse their directories. Additionally, the Django framework will allow the usage of python classes that will enable the 
         back-end operation of the application.
 
         
@@ -168,24 +169,24 @@
         %%were provided, will be prompted as such. %% Shouldn't this be in the "Enter URL" section?
 
         \subsection{User Actions}
-        The User Actions subsection covers how the user will interact with the application and how entering the application, displaying the file structure, downloading virtual disk images and error catching 
+        This section covers how the user will interact with the application and how entering the application, displaying the file structure, downloading virtual disk images and error catching 
         will be implemented.
 
             \subsubsection{Enter URL}
-            On the main page of the application the use will be presented with a textbox where they will enter a URL that goes to their cloud platform. The text box will be centrally located with a design to
-            help users clearly see where to input the URL, the box will also have shadow text requesting input. Once a URL is entered and submitted the application will figure out which cloud platform the URL
+            On the main page of the application the user will be presented with a textbox where they will enter a URL that goes to their cloud platform. The text box will be centrally located with a design to
+            help users clearly see where to input the URL. The box will also have shadow text requesting input. Once a URL is entered and submitted the application will figure out which cloud platform the URL
             belongs to, through a GET request to the URL. If an error occurs with the GET request the user will be notified of the error. If the request is successful then the user will be prompted to
             provide their login credentials to their cloud platform, on a pop-up window. The authentication will be verified with the platform they are using, (for example: SAML for VMware or AWS Auth for AWS).
             Once authenticated the application will present the user with their files and folders that are on that platform.
             
             \subsubsection{Display File Structure and Download Selected Files}
-            Once the user has selected a cloud platform and is authenticated, they will be presented with their directory structure on that platform. They will only see high level directories initially
-            however will be able to open the directories to see files located within. They can use this information to verify all files were retrieved from the cloud once downloaded and select which
-            files to download. After selecting the files and folders the user wants, they will click the download button, initiating the download of their selected files from the cloud platform.
+            Once the user has selected a cloud platform and is authenticated, they will be presented with their directory structure on that platform. They will only see high level directories initially,
+            however, they will be able to open the directories to see files located within. They can use this information to verify all files were retrieved from the cloud once downloaded and select which
+            files to download. After selecting the files and folders the user wants, they will click the download button, which initiates the download of their selected files from the cloud platform.
             Unless specified differently in their browser preferences, the user can expect to find copies of the files in their home download folder.
             When Cyperpath assimilates the application into their platform they will direct the download where they need it.
 
-            This page that presents the user with their directory structure will also contain a back button in addition to the download button to allow them to visit the main page and enter a URL to a different
+            This page that presents the user with their directory structure will also contain a back button, in addition to the download button that allows them to visit the main page and enter a URL to a different
             cloud platform.
 
             %%% This section just repeats the section above
@@ -203,15 +204,15 @@
 
         \subsection{Termination}
         Since the user is not authenticated to the web application, to terminate their interaction with the application they will simply close the browser tab or window that has the
-        application open. Use of the authentication token will be deleted as well per use, there will be no cookies to remember users every time they log into the accounts. Upon Termination
-        of the application the user will have to go through the same steps when they invoke the application since no sessions or states are remembered by the application.
+        application open. Use of the authentication token will be deleted as well per use, there will be no cookies to remember users every time they log into the accounts. After termination
+        of the application the user will have to go through the same steps when they invoke the application since sessions and states are not remembered by the application.
 
         During development the Django Web Server that is used will be terminated by the developer entering \textit{Ctrl + c} on their keyboard to end the process. Once Cypherpath has integrated the application into
         their ecosystem they will terminate the web application their way.
 
     \section{Priority of Cloud Platforms}
     Cypherpath has expressed that VMware vSphere and Amazon Web Services cloud platforms are the priority to have supported with the application. After those modules are working, Captain Cybeard will then add support
-    for Citrix, Google Drive and Dropbox in that order of priority. If the development team does not have time to implement modules for interacting with all of these cloud platforms then the lowest priority ones will be removed
+    for Citrix, Google Drive and Dropbox in that order of priority. If the development team does not have time to implement modules for interacting with all of these cloud platforms, then the lowest priority ones will be removed
     from the project. However the requirement is that at least VMware vSphere and Amazon Web Services be supported.
 
 
