@@ -25,6 +25,18 @@
     \newpage
     \pagenumbering{arabic}
 
+    \section{Introduction}
+    The following figures are screenshots for the \textit{Downloader} Prototype. The prototype was created with HTML, CSS
+    and Javascript and opened with a web browser (a web server was not used to serve the files). The \textit{Downloader}
+    application is an application where users will enter a URL that goes to their external cloud service and then the
+    application will have the users authenticate to their external cloud service. After authentication, the user can
+    navigate their directories on the cloud platform and select which files to download. The screenshots show this
+    process visually.
+
+    Figures \ref{fig:clouduname} and \ref{fig:cloudpass} must be two separate steps due to the limitations of vanilla
+    Javascript, however when the application is actually implemented with Django these two inputs from the user will be
+    in the same window.
+
     \begin{figure}[h]
     \includegraphics[scale=.7]{s0}
         \caption{First page, ready for a url to a cloud platform.}
@@ -38,12 +50,15 @@
     \begin{figure}[h]
     \includegraphics[scale=.7]{s2}
         \caption{Username to cloud platform entered.}
+        \label{fig:clouduname}
     \end{figure}
 
     \begin{figure}[h]
     \includegraphics[scale=.7]{s3}
-        \caption{Password to cloud platform entered. Note: Javascript doesn't allow for a popup with two text boxes, the actual implementation
-            will include both the username and password entry boxes in the same window.}
+        \caption{Password to cloud platform entered. Note: Javascript doesn't allow for a popup with two text boxes in
+        the same window or two windows at the same time. The actual implementation
+        will include both the username and password entry boxes in the same popup window.}
+        \label{fig:cloudpass}
     \end{figure}
 
     \begin{figure}[h]
