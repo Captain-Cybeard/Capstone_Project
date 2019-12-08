@@ -30,7 +30,8 @@
 
     \newpage
     \begin{versionhistory}
-        \vhEntry{2.1}{12.04.2019}{TS}{Provided more grammatical checking along with a Reference Recomendation}
+        \vhEntry{2.2}{12.07.2019}{KT}{Added in Dr. Corrigan's corrections}
+        \vhEntry{2.1}{12.04.2019}{TS}{Provided more grammatical checking along with a Reference Recommendation}
         \vhEntry{2.0}{12.04.2019}{KT}{Added priority section \& final edits}
         \vhEntry{1.2}{12.03.2019}{KT}{Grammar edits and wording}
         \vhEntry{1.1}{11.16.2019}{NF}{Grammar edits and wording}
@@ -50,63 +51,52 @@
 
     \pagenumbering{arabic}
     \section{Introduction}
-    This requirements specification document will go over the requirements for the Virtual Machine file Downloader for Cypherpath's Resiliency Platform that was outlined in the
-    \texttt{Project Plan} \cite{projectplan}.
+    This requirements specification document will go over the requirements for the Virtual Machine file Downloader for Cypherpath's Resiliency Platform \cite{cypherpath} that was outlined in the
+    \texttt{Project Plan} \cite{projectplan}. This \textit{Downloader} application will allow users to transfer files directly from various cloud platforms into the Resiliency Platform
+    created by Cypherpath that gives their customers cyber resiliency.
     The document will cover how the application will provide a solution for users to easily upload their Virtual Machine files to the Resiliency Platform.
-    Providing details on how the users will interact with the application through a web interface. This document will be understood and agreed
-    upon by both the customer (Cypherpath) and the software development team (Captain CyBeard).
+    Along with covering the solution, the requirements specification will also provide details on how users will interact with the application through a web interface.
+    This document will be understood and agreed upon by both the customer (Cypherpath) and the software development team (Captain CyBeard).
 
-    Subsequent sections will include, background information on Cypherpath and their Resiliency Platform. An overview of the application, what it
-    will Accomplish. The environment the application will execute in. How users will interact the application. Additionally includes the priority of the cloud platforms that the application will support.
+    Subsequent sections will include background information on Cypherpath and their Resiliency Platform, followed by a high level overview of the application. After this, the document will get into the
+    details of the application such as the environment the application will execute in, and how the application will be operated by users and web administrators.
 
-	The Cypherpath Resiliency Platform tool is a product that provides their customers the ability to upload virtual machines, network configurations and more, into 
-    self-contained digital environments. This enables their customers to quickly recover from attacks such as ransomware. Right now, customers have to manually download their virtual disk images from
-    the various cloud platforms they are hosted on, and then upload those to the Resiliency Platform. Cypherpath has requested a web application that will enable users to have their virtual disk images go
+	The Cypherpath Resiliency Platform tool is a product that provides their customers the ability to upload pre-existing virtual machines, network configurations and more, into 
+    a self-contained digital environment. This enables their customers to quickly recover from events such as ransomware attacks or human errors. Right now, customers have to manually download their virtual disk images from
+    the various cloud platforms they are hosted on, and then upload those to the Resiliency Platform. Cypherpath would like to have a web application that will enable users to have their virtual disk images go
     directly from the cloud platform into the Resiliency Platform, cutting out the multi-step process of downloading and then uploading large virtual disk images.
 	
     \section{Background}
     Cypherpath's Resiliency Platform started out as a platform where the U.S. Military could emulate the networks of countries and simulate cyber attacks between the countries in order to
-    learn about the strength and weaknesses of the countries simulated. After proving its usefulness in this market, Cypherpath entered the commercial market and provides it platform as a service to
+    learn about the strength and weaknesses of the countries simulated. After proving its usefulness in this market, Cypherpath entered the commercial market and provides its platform as a service to
     companies and local governments alike to provide resiliency to these entity's network infrastructures. Resiliency in the cyber sense means that systems and networks are secure, recoverable and
     continuous. Customers of Cypherpath enjoy a readiness of their technological resources, and can rapidly adjust and adapt those resources when failures, damages or attacks occur in order to keep their business running smoothly.
 
     This project will become a component of the Resiliency Platform by enabling Cypherpath's customers to more easily migrate their virtual assets into the platform. Currently customers have to download
     their virtual assets onto their local machine and then upload them into the Resiliency Platform. This project will simplify this process by having the Resiliency Platform download the virtual asset directly
     into its infrastructure. The software development team will not be integrating the application with the Resiliency Platform. The product delivered to Cypherpath will be a standalone web application that downloads
-    digital assets from various cloud platforms. Upon completion of the project, Cypherpath will integrate the web application into their Resiliency Platform.
-
-	%This project will give Cypherpath users a simple means of directly transferring virtual disk images from various cloud platforms directly into
-    %Cypherpath's Resiliency Platform, providing more value to the customer in the process.
+    digital assets from various cloud platforms. Upon completion of the project, Cypherpath will integrate the web application into their Resiliency Platform by changing the user interface and theme of the application to match
+    theirs. They only need the backend Python-Django part of the application.
 
 	
     \section{Overview}
-    The purpose of this application is to allow users to download virtual disk images from online cloud platforms, to local file storage.
-    The application itself will operate as a web server using Python3 and Django2. Users will start the application by navigating to the URL pointing to the application.
+    The purpose of this application is to allow users to download virtual disk images from online cloud platforms, to the Resiliency Platform (the application delivered will only download the files to local storage).
+    The application itself will operate as a web server using Python3 \cite{python} and Django2 \cite{django}. Users will start the application by navigating to the URL pointing to the application.
     Once at the main page the user will
     provide a URL to their account on an external cloud platform. Once the application processes the URL to determine which cloud platform the URL points to, the user is
     then asked to provide their credentials to authenticate
     to that platform. After authentication, the application will use the API of the cloud platform and show the user their Virtual Disk Image (vdi) for that machine.
-    The User will be able to navigate their directory structure and select which files and folders to download locally to their desktop.
-    When the user clicks the download button the application will use another API call to download the files onto their PC.
+    The user will be able to navigate their directory structure and select which files and folders to load into the platform (again, during development the application will download the files to local storage instead
+    of interacting with the Resiliency Platform).
 
     The application will be written with Python3 and Django2, including the requests libraries for API calls, Authentication libraries like SAML
     and standard libraries. To install the application, Cypherpath will integrate the Django web application into their environment along with installing (if not installed already)
     the libraries for interacting with the external cloud platforms and authentication API's. Users of the application will not need to install any software since most operating systems come
     with a web browser which will interact with the application on the user's end.
 
-    %The application only allows users to view the files from VM's they own, and download those file locally to the machine they 
-    %are running the application through. The users will have the ability to provide either a VMware URL to download from, or an
-    %Amazon Web Services (AWS) VM URL. The application will be designed with modularity to allow further development with different 
-	%VM service providers such as Citrix, Google Drive and DropBox. If time allows, these will be developed incrementally, with 
-	%Citrix being the next highest priority and then Google Drive and DropBox.
 
-	%\large ?? WHAT IS THE WEBHOST INFORMATION ?? 
-	%?? Also, I'm not sure that understand Trevors notes on this ??
-	
     \section{Environment}
-	%\large This application will preside in Cyperpath's suite of applications and will connect to cloud services through API calls. 
-    %!! NEED MORE INFO FROM CYPHERPATH HERE !!
-    The next sections will go over the environment the application will reside in. This will include the web application, authentication API's, cloud storage API's and the local storage
+    This section will describe the environment the application will reside in. This will include the web application, authentication API's, cloud storage API's and the local storage
     of the machine running the application. During development this will be the users machine, but Cypherpath will be using their storage scheme for production.
 	
     \begin{figure}[h]
@@ -125,15 +115,15 @@
         \subsection{Authentication API's}
         The application will authenticate to the cloud platforms with various authentication methods and API's. The application will support
         SAML, AWS Authentication, OpenID and OAuth. The application will be designed in a modular fashion so that more authentication methods can be easily added later.
-        The authentication will provide a token to verify the users for their cloud platform, the application will not provide previous states for the use of the 
+        The authentication will provide a token to verify the users for their cloud platform. The application will not provide previous states for the use of the 
         website, nor will it save previous URL's entered. The token will be passed to the request for access to the URL provided.
 
 
         \subsection{Cloud Storage API's}
         Once the application is authenticated to a cloud storage platform it will gather the directory structure for showing to the user and allowing them to select
-        which of their files they would like to download. The application will support interacting with VMware, Amazon Web Services, Citrix, Google Drive and Dropbox. The API's
+        which of their files they would like to download. The application will support interacting with VMware \cite{vmware}, Amazon Web Services \cite{aws}, Citrix, Google Drive and Dropbox. The API's
         that are necessary for the communication, will request the directory structure of their cloud storage and provide it to the user so they can select which virtual disk
-        images they would like to download. Like the authentication modules, the modules
+        images, from the cloud platform, they would like to download. Like the authentication modules, the modules
         for interacting with the cloud API's will need to be designed so that adding support for other cloud platforms will be possible.
 
 
@@ -185,7 +175,8 @@
             however, they will be able to open the directories to see files located within. They can use this information to verify all files were retrieved from the cloud once downloaded and select which
             files to download. After selecting the files and folders the user wants, they will click the download button, which initiates the download of their selected files from the cloud platform.
             Unless specified differently in their browser preferences, the user can expect to find copies of the files in their home download folder.
-            When Cyperpath assimilates the application into their platform they will direct the download where they need it.
+            When Cypherpath assimilates the application into their platform they will direct the download where they need it. This will be accomplished by Cypherpath changing the actions of the download button to
+            do what they need the button to do instead of doing a simple GET request to download the materials.
 
             This page that presents the user with their directory structure will also contain a back button, in addition to the download button that allows them to visit the main page and enter a URL to a different
             cloud platform.
@@ -203,46 +194,50 @@
             Additionally if the download fails and the web browser's download manager is unable to recover or restart the download then the user will have to press the download button again assuming they haven't left
             the page.
 
+            Additionally, the application may not be able to tell what platform the URL points to, in this case the user will be prompted to select from a list of supported platforms which one the URL goes to.
+
         \subsection{Termination}
         Since the user is not authenticated to the web application, to terminate their interaction with the application they will simply close the browser tab or window that has the
         application open. Use of the authentication token will be deleted as well per use, there will be no cookies to remember users every time they log into the accounts. After termination
         of the application the user will have to go through the same steps when they invoke the application since sessions and states are not remembered by the application.
 
-        During development the Django Web Server that is used will be terminated by the developer entering \textit{Ctrl + c} on their keyboard to end the process. Once Cypherpath has integrated the application into
+        During development the Django Web Server that is used will be terminated by the developer entering \textit{ctrl + c} on their keyboard to end the process. Once Cypherpath has integrated the application into
         their ecosystem they will terminate the web application their way.
+
+    %\section{Priorities}
+    %This section covers the priorities of the various modules that Cypherpath would like to be supported by the application.
 
     \section{Priority of Cloud Platforms}
     Cypherpath has expressed that VMware vSphere and Amazon Web Services cloud platforms are the priority to have supported with the application. After those modules are working, Captain Cybeard will then add support
-    for Citrix, Google Drive and Dropbox in that order of priority. If the development team does not have time to implement modules for interacting with all of these cloud platforms, then the lowest priority ones will be removed
-    from the project. However the requirement is that at least VMware vSphere and Amazon Web Services be supported.
-
-    \section{Priority of Functionality}
-    Cyperpath has requested the ability to download specified files. If the team is unable to provide selectable tabs for individual file downloading the team will prioritize the downloading of only the vdi specific
-    to the machines provided by the user.
+    for Citrix, Google Drive and Dropbox in that order of priority. The requirement is that at least VMware vSphere and Amazon Web Services be supported.
+    
+        %\subsection{Functionality}  I took this out since Neil said don't say things about not being able to do things (kyle)
+        %Cyperpath has requested the ability to download specified files. If the team is unable to provide selectable tabs for individual file downloading the team will prioritize the downloading of only the vdi specific
+        %to the machines provided by the user.
 
 
 
     \newpage
-    \begin{thebibliography}{1}
+    \begin{thebibliography}{6}
     \bibitem{projectplan}
     Ryan Breitenfeldt, Noah Farris, Trevor Surface, Kyle Thomas.
     \textit{Project Plan}.
     [\textit{Project Plan for Downloader Application}] 2019.
-    \end{thebibliography}
 
-
-    \section{References}
-    Amazon Web Services, Inc. (2019). Amazon Web Services (AWS) - Cloud Computing Services. [online] Available at: https://aws.amazon.com/ [Accessed 10 Oct. 2019].
+    \bibitem{cypherpath}
     Cypherpath.com. (2019). Cypherpath, Inc. [online] Available at: https://www.cypherpath.com/ [Accessed 21 Oct. 2019].
-    VMware. (2019). VMware – Cloud, Mobility, Networking \& Security Solutions. [online] Available at: https://www.vmware.com/ [Accessed 15 Nov. 2019].
-    Python.org. (2019). Welcome to Python.org. [online] Available at: https://www.python.org/ [Accessed 6 Nov. 2019].
-    % Reference the project plan?
-    %(TREVOR) For References we should include Cypherpath website, VMWARE and AWS
-    % Possibly reference documentation to the various API's?
 
-%    \appendix
-%    \section{Appendix}
-    % Sample files, if any?
-    % Maybe a sketch of the general page layout?
+    \bibitem{aws}
+    Amazon Web Services, Inc. (2019). Amazon Web Services (AWS) - Cloud Computing Services. [online] Available at: https://aws.amazon.com/ [Accessed 10 Oct. 2019].
+
+    \bibitem{vmware}
+    VMware. (2019). VMware – Cloud, Mobility, Networking \& Security Solutions. [online] Available at: https://www.vmware.com/ [Accessed 15 Nov. 2019].
+
+    \bibitem{python}
+    Python.org. (2019). Welcome to Python.org. [online] Available at: https://www.python.org/ [Accessed 6 Nov. 2019].
+
+    \bibitem{django}
+    Djangoproject.com. (2019). The Web framework for perfectionists with deadlines \textbar\ Django. [online] Available at: https://www.djangoproject.com/ [Accessed 6 Nov. 2019].
+    \end{thebibliography}
 
 \end{document}
