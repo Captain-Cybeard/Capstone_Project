@@ -22,6 +22,7 @@
 \include{titlepage}
 
 \tableofcontents
+\newpage
 \listoffigures
 \newpage
 
@@ -32,20 +33,82 @@
 
 \pagenumbering{arabic}
 \section{Introduction}
+This document will go over the design and architecture for the \textit{Downloader} application that was laid out in
+\texttt{Requirements Specification}\cite{reqs}. The design document will help the client (Cypherpath) and the
+software development team (Captain CyBeard) understand the architecture and functionality of the application.
+
+Subsequent sections will go over the general architecture of the application in unified modeling language
+(UML) followed by a data dictionary. Afterwards the user interface and examples of information repositories needed
+by the application will be presented.
 
 \section{Architecture}
+The application will consist of \textbf{\textit{NUMBER OF CLASSES}} in a model, view, controller architecture. The following
+UML diagrams will show the classes and their relationships with each other, along with their attributes and methods.
+
+%%
+% UML diagrams go here
+%%
 
 \section{Data Dictionary}
+The Data Dictionary sections will describe what each class does, along with a more detailed view of its
+associations, attributes and methods that the class has.
 
-% Section User Interface:
+%\include{}
+%\include{}
+%\include{}
+%\include{}
+%\include{}
+%\include{}
+
 \section{User Interface}
+The User interface section will over the actions that a user will be able to take, explaining all menus, buttons,
+pull down menus, selections, etc. This section will also describe actions that system administrators will need to
+take to start and stop the application.
 
-% Section Files:
+    \subsection{User Interaction}
+    The user will interact with the application through the web interface. They will have several screens (views)
+    to navigate through. Those will include the main screen to select the platform to download from (AWS, Dropbox,
+    Google Drive, etc) and then will be presented with a view to enter their credentials. Once their credentials
+    are entered they will be presented with the final view which contains their directory structure and contents
+    and they will be able to multi-select which of those contents they would like to download.
+    
+      \subsubsection{Platform Selection Screen}
+    
+      \subsubsection{Authentication Screen}
+    
+      \subsubsection{File Selection Screen}
+    
+    \subsection{Administrator Interaction}
+    The system administrator will interact with the application by using the builtin Django commands on the
+    server that the application will run on. They will mainly only be starting and stopping the web application
+    through this interface. Django does have a builtin web administration page but this application will not
+    need to take advantage of this functionality.
+
+      \subsubsection{Start Application}
+
+      \subsubsection{Stop Application}
+
 \section{Information Repositories}
+The application uses several different information repositories. There will be one for each platform supported as
+outlined in the \texttt{Requirements Specification} \cite{reqs}. For example, AWS storage will be an information
+repository as well as Dropbox. The user's local hard drive will also be an information repository during
+development and then once the client takes delivery their internal storage will become the information repository.
+
+    \subsection{Cloud Platform Repository}
+    The Cloud Repositories are the storage on the cloud for each platform that the user has files stored on.
+    These files can be any type but will typically be an operating system ISO for the client's use case. These
+    repositories can contain any arbitrary number of files and folders stored within this repository, the users
+    will be able to nagivate these through the application and select which ones to download.
+    
+    \subsection{Local Storage or Internal Infrastructure}
+    The second type of information repository that the application will contain is the location that the
+    application will download the user selected files from. This will be the user's local storage during the
+    development cycle and in production the client's internal infrastructure will be the repository for these
+    files.
 
 \newpage
 \begin{thebibliography}{1}
-\bibitem{}
+\bibitem{reqs}
 Author
 \textit{title}.
 [\textit{description}] year.
