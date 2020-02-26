@@ -1,0 +1,57 @@
+% Compiled with pdflatex
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{vhistory}
+\usepackage[parfill]{parskip}
+\usepackage{float}
+\graphicspath{{../Images/}}
+
+\title{}
+\author{}
+\date{}
+
+\fancyfoot{}
+\fancyhead{}
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\include{titlepage}
+
+\tableofcontents
+\listoffigures
+\newpage
+
+\begin{versionhistory}
+	\vhEntry{0.1}{02.25.2020}{KT}{Document Creation}
+\end{versionhistory}
+\newpage
+
+\pagenumbering{arabic}
+\section{Introduction}
+
+\section{Architecture}
+
+\section{Data Dictionary}
+
+% Section User Interface:
+\section{User Interface}
+
+% Section Files:
+\section{Information Repositories}
+
+\newpage
+\begin{thebibliography}{1}
+\bibitem{}
+Author
+\textit{title}.
+[\textit{description}] year.
+\end{thebibliography}
+
+%\appendix
+%\section{Appendix}
+
+\end{document}
