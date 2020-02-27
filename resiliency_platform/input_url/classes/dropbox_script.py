@@ -49,8 +49,8 @@ driver = webdriver.Chrome(chrome_options=options)
 
 class DropBox(object):
     def __init__(self):
-        self.dropbox_api_key = 'xq8jbecr17pq4sm'
-        self.dropbox_api_secret = 'tyz24n7zoq2e090'
+        self.dropbox_api_key = ''
+        self.dropbox_api_secret = ''
         self.dropbox_authentication_auth_flow = ""
         self.dropbox_authentication_authorize_url = ""
         self.dropbox_authentication_auth_code = ""
