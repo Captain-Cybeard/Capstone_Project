@@ -1,0 +1,31 @@
+Class: aws
+
+Description:
+The class 'aws' will be the primary handler of the applications interaction with Amazon Web Services,
+this includes Amazon Elastic Compute Cloud (EC2) and Amazon Simple Storage Service (S3). The application
+can use 'aws' to get a list of all available images, buckets that the images can go in, buckets to export 
+to, and the ability to download an image from a bucket.
+
+Attributes:
+1. _ec2_client: Creates an instance of the EC2 client.
+
+2. _s3_client: Creates an instance of the S3 client.
+
+3. _s3_resource: Creates an instance of the S3 resource.
+
+Methods:
+1. __progress_indicator(in vm_file: _io.TextIOWrapper)
+    This is a private method that is used to return the progress of the VM file download. This Method is 
+    used by the download_image method.
+
+2. get_image_list()
+    This method returns a list of all available images that a user has access to in their AWS account.
+
+3. get_buckets()
+    This method returns a list of all available buckets that a user has access to in their AWS account.
+
+4. export_to_bucket()
+    This method is used to export an image to a bucket, once in the bucket the image is then available for download.
+
+5. download_image()
+    This method is used to download the specified image from the bucket that it is in.
