@@ -1,0 +1,40 @@
+
+\subsection{GDriveDownloader}
+The GDriveDownloader class is responcable fot authenticating to Google, aquire a list of files from Google Drive, and download the file.
+This class is able to take the authentication token and the built service as an input on creation.  
+​
+\subsubsection{Associations}
+The association \textbf{UI} is used to allow the user to authenticate to their Google account and to display the avalible files.
+​
+​
+\subsubsection{Attributes}
+\textbf{creds} \\
+The attribute creds holds the authentication token.
+​
+\textbf{SCOPES} \\
+The attribute SCOPES holds the scope of what the application can access from Google.
+
+\textbf{service} \\
+The attribute service holds the built service.
+
+\textbf{fileList} \\
+The attribute fileList hold the list of files from Google Drive.
+​
+\subsubsection{Methods}
+\textbf{authToGoogle} \\
+This method handles the authentication to google and gets the authentication token.
+
+\textbf{saveToken} \\
+This method saves the token to a file.
+
+\textbf{loadToken} \\
+This method loads the token from a file.
+
+\textbf{buildService} \\
+This method builds the service from the scope and the authentication token.
+
+\textbf{downloadFile} \\
+This method downloads a file with a selected file id. 
+
+\textbf{getFiles} \\
+This method qurries Google Drive for the files stored in the user's Google account. 
