@@ -7,37 +7,44 @@ from googleapiclient.http import MediaIoBaseDownload
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
+#googleapiclient.discovery.build
+#googleapiclient.discovery.build.files().list()
+#googleapiclient.http.MediaIoBaseDownload
+#google_auth_oauthlib.flow.InstalledAppFlow
+#google.auth.transport.requests.Request
+
 
 class GDriveDownloader():
     def __init__(self,creds=None,service=None):
-        self.creds = creds
-        self.SCOPES = ['https://www.googleapis.com/auth/drive']
-        self.service = service
-        self.fileList = None
+        self.GDriveDownloader_creds = creds
+        self.GDriveDownloader_SCOPES = ['https://www.googleapis.com/auth/drive']
+        self.GDriveDownloader_service = service
+        self.GDriveDownloader_file_List = None
+        self.GDriveDownloader_json = None
 
-    def authToGoogle(self):
+    def GDriveDownloader_authentication(self):
         # If there are no (valid) credentials available, let the user log in.
-        if not self.creds or not self.creds.valid:
-            if self.creds and self.creds.expired and self.creds.refresh_token:
+        if not self.GDriveDownloader_creds or not self.GDriveDownloader_creds.valid:
+            if self.GDriveDownloader_creds and self.GDriveDownloader_creds.expired and self.GDriveDownloader_creds.refresh_token:
                 creds.refresh(Request())
             else:
-                flow = InstalledAppFlow.from_client_secrets_file('client_secret_204730000731-ua1e5ag1foa5c089g1hka58vc849bvfs.apps.googleusercontent.com.json', self.SCOPES)
-                self.creds = flow.run_local_server(port=0)
+                flow = InstalledAppFlow.from_client_secrets_file('client_secret_204730000731-c0gs1os80ucalj6mto9c1etmaee70is7.apps.googleusercontent.com.json', self.GDriveDownloader_SCOPES)
+                self.GDriveDownloader_creds = flow.run_local_server(port=0)
 
-    def saveToken(self):
+    def GDriveDownloader_save_Token(self):
         with open('token.pickle', 'wb') as token:
-            pickle.dump(self.creds, token)
+            pickle.dump(self.GDriveDownloader_creds, token)
 
-    def loadToken(self):
+    def GDriveDownloader_load_Token(self):
         if os.path.exists('token.pickle'):
             with open('token.pickle', 'rb') as token:
                 creds = pickle.load(token)
 
-    def buildService(self):
-        self.service = build('drive', 'v3', credentials=self.creds)
+    def GDriveDownloader_build_Service(self):
+        self.GDriveDownloader_service = build('drive', 'v3', credentials=self.GDriveDownloader_creds)
 
-    def downloadFile(self,file_Id):
-        request = self.service.files().get_media(fileId=file_id)
+    def GDriveDownloader__download_File(self,file_Id):
+        request = self.GDriveDownloader_service.files().get_media(fileId=file_id)
         fh = io.BytesIO()
         downloader = MediaIoBaseDownload(fh, request)
         done = False
@@ -45,15 +52,15 @@ class GDriveDownloader():
             status, done = downloader.next_chunk()
             print("Download {}%".format(int(status.progress() * 100)))
 
-    def getFiles(self):
+    def GDriveDownloader__get_Files(self):
         page_token = None
         while True:
-            self.fileList = self.service.files().list(spaces='drive', fields='nextPageToken, items(id, title)', pageToken=page_token).execute()
-            for file in self.fileList.get('items', []):
+            self.GDriveDownloader_file_List = self.GDriveDownloader_service.files().list(spaces='drive', fields='nextPageToken, items(id, title)', pageToken=page_token).execute()
+            for file in self.GDriveDownloader_file_List.get('items', []):
                 # Process change
                 #print 'Found file: %s (%s)' % (file.get('title'), file.get('id'))
                 print(file.get('title'))
-            page_token = self.fileList.get('nextPageToken', None)
+            page_token = self.GDriveDownloader_file_List.get('nextPageToken', None)
             if page_token is None:
                 break
 
