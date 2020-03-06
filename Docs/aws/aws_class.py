@@ -3,8 +3,8 @@ import tqdm
 
 class aws():
 
-    def __init__(self, access_key_id, access_key, region = 'us-west-2',):
-        self._ec2_client = boto3.client('ec2',region_name=region, 
+    def __init__(self, access_key_id, access_key, region = 'us-west-2'):
+        self._ec2_client = d('ec2',region_name=region, 
                         aws_access_key_id=access_key_id,
                         aws_secret_access_key=access_key)
         self._s3_client = boto3.client('s3',region_name=region, 
