@@ -6,9 +6,13 @@ not displayed. Using a check box the user will be prompted to select unique file
 the download button, the files will be sent to the C:/Downloads folder, unless specified by the user to change.
 
 \subsubsection{Associations}
-\textbf{Is contained in UI} \\
+\textbf{Main} \\
+The Dropbox class is contained in 'main', which will pass in authentication information and receive information about files 
+that a user has access to.
 
-\textbf{Makes calls to Dropbox} \\
+\textbf{Dropbox} \\
+The Dropbox class calls dropbox using dropbox's Python SDK in order to return information about files and in order
+to download selected files.
 
 \subsubsection{Attributes}
 \textbf{dropbox\_api\_key:String} \\
