@@ -27,6 +27,8 @@
 \newpage
 
 \begin{versionhistory}
+	\vhEntry{0.4}{03.04.2020}{NF}{AWS Section}
+	\vhEntry{0.3}{03.04.2020}{TS}{Dropbox Section}
 	\vhEntry{0.2}{03.04.2020}{KT}{Filled in sections other than data dictionary}
 	\vhEntry{0.1}{02.25.2020}{KT}{Document Creation}
 \end{versionhistory}
@@ -50,16 +52,19 @@ UML diagrams will show the classes and their relationships with each other, alon
 % UML diagrams go here
 %%
 
-\section{Data Dictionary}
-The Data Dictionary sections will describe what each class does, along with a more detailed view of its
-associations, attributes and methods that the class has.
-
 %%
-% Don't need to put the ".tex" extension, just the name
+% Data dictionary section, keep main at the top since it includes the proper section heading
 %%
 
+\include{main}
+\include{directory}
+\include{file}
 \include{dropbox}
 \include{aws}
+%\include{google}
+\include{platform_selection}
+\include{authentication}
+\include{file_selection}
 
 \section{User Interface}
 The User interface section will over the actions that a user will be able to take, explaining all menus, buttons,
