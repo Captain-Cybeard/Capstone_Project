@@ -23,12 +23,12 @@ given that the user has access to do both.
     This attribute stores all files returned by the AWS API that a user can see.
 
 \textbf{aws\_entries\_to\_download\_list:Object List} \\
-    This attibute will store the information provided by the user of which files they want to download. The object is the same as the above 
+    This attribute will store the information provided by the user of which files they want to download. The object is the same as the above 
     attributes. Using the entries.path\_lower, attribute of the generated object, the information will be provided to the download method in 
     order to download the list of files specified by the user.
 
 \textbf{aws\_download\_path:String="C:/Downloads"} \\
-    This attribute will hold teh path value used for downloading files. The default for this attribute will be the downloads folder. The user 
+    This attribute will hold the path value used for downloading files. The default for this attribute will be the downloads folder. The user 
     will be given the option to specify the download location. This will update the value to their new destination. If the destination does 
     not exist, the user will be prompted.
 
@@ -43,8 +43,8 @@ given that the user has access to do both.
 
 \textbf{aws\_format\_entries\_list:void} \\
     This method will format the returned JSON from get\_files\_list according to the specifications laid out for JSON formatting. As is specified in the
-    dropbox section of this document: "he ordering will be a hierarchal order, listing folders and the inlcuded subfolders and files. This will then be stored in json format to be used by the website to display the data in an
-    accordion list which will expand the structues to display subfolders and files inlcuded within selected folder. Providing an easier to manage
+    Dropbox section of this document: "the ordering will be a hierarchal order, listing folders and the included subfolders and files. This will then be stored in json format to be used by the website to display the data in an
+    accordion list which will expand the structures to display subfolders and files included within selected folder. Providing an easier to manage
     interface for the user."
 
 \textbf{aws\_select\_entries\_to\_download:void} \\

@@ -1,0 +1,42 @@
+\subsection{GDriveDownloader}
+The GDriveDownloader class is responsible for authenticating to Google, acquiring a list of files from Google Drive, and downloading the file.
+This class is able to take the authentication token and the built service as an input on creation.  
+%​
+\subsubsection{Associations}
+The association \textbf{UI} is used to allow the user to authenticate to their Google account and to display the available files.
+%​
+%​
+\subsubsection{Attributes}
+\textbf{GDriveDownloader\_creds} \\
+The attribute GDriveDownloader\_creds holds the authentication token.
+%​
+\textbf{GDriveDownloader\_SCOPES} \\
+The attribute GDriveDownloader\_SCOPES holds the scope of what the application can access from Google.
+
+\textbf{GDriveDownloader\_service} \\
+The attribute GDriveDownloader\_service holds the built service.
+
+\textbf{GDriveDownloader\_file\_List} \\
+The attribute GDriveDownloader\_file\_List hold the list of files from Google Drive.
+
+\textbf{GDriveDownloader\_json} \\
+The attribute GDriveDownloader\_json holds the JSON need by the UI. 
+%​
+\subsubsection{Methods}
+\textbf{GDriveDownloader\_authentication} \\
+This method handles the authentication to Google and gets the authentication token. It saves the token in GDriveDownloader\_creds.
+
+\textbf{GDriveDownloader\_save\_Token} \\
+This method saves the token to a file.
+
+\textbf{GDriveDownloader\_load\_Token} \\
+This method loads the token from a file.
+
+\textbf{GDriveDownloader\_build\_Service} \\
+This method builds the service from the scope and the authentication token.
+
+\textbf{GDriveDownloader\_\_download\_File} \\
+This method downloads a file with the selected file ids. 
+
+\textbf{GDriveDownloader\_\_get\_Files} \\
+This method queries Google Drive for the files stored in the user's Google account. It will also create the JSON for the UI and store it in GDriveDownloader\_json.   
