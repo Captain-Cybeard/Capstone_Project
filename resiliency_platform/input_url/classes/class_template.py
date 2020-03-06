@@ -8,6 +8,8 @@ class [NAME](object):
     def __init__(self):
         ##For Attributes use convention [NAME]_?[MODOL]_[PARAM]
         ## [NAME]__user_download_path
+        ## [NAME]_get_files_list_result
+        ## [NAME]_entries_to_download_list
 
     def [NAME]_authentication(self):
         #This is for the authentication of the class, include anything neccessary to do so here

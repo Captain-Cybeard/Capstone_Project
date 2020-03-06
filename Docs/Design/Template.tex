@@ -19,6 +19,14 @@ Helping to provide readability to future developers, and indicating how the attr
 This attribute needs to be included in every class, and will default to the Users C:/Downloads, unless specifically alterd by the user 
 through the application itself. 
 
+/textbf{[NAME]_get_files_list_result:List} \\
+This attribute is a recomendation to include in every class as a storage location for the return from the cloud api. This will be 
+utilized in methods included within the template. 
+
+/textbg{[NAME]_entries_to_download_list:List} \\
+This attribute is a recomendation to include in every class as storage for the return value of the UI for the cloud service. By using
+this attribute, the developer can parse the return in the fasion to which they need to allow downloading the user specified data.
+
 \subsubsection{Methods}
 \textbf{[NAME]\_authentication(self):type} \\
 This method is used to simplify api usage for authentication and will interact with the UI in a more seemless manner. Additionall authentication
