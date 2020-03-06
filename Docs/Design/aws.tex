@@ -1,13 +1,14 @@
 \subsection{AWS}
-The class 'aws' will be the primary handler of the application's interaction with Amazon Web Services,
+The class 'aws' will be the primary handler of the application's interaction with Amazon Web Services (AWS),
 this includes Amazon Elastic Compute Cloud (EC2) and Amazon Simple Storage Service (S3). The application
 can use the 'aws' class to get a list of all available files as well as the ability too download said files, 
 given that the user has access to do both.
 
 \subsubsection{Associations}
-\textbf{Is contained in UI} \\
-
-\textbf{Makes calls to AWS} \\
+\textbf{UI} \\
+The AWS Class will be called by the UI and the Main Controller.
+\textbf{AWS} \\
+The AWS Class makes calls to Amazon Web Services using Amazon's boto3 Python module.
 
 \subsubsection{Attributes}
 \textbf{aws\_ec2\_client\_flow:Object boto3.client()} \\
