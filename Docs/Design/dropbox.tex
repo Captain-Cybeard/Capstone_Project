@@ -71,7 +71,7 @@ to download selected files.
     attributes. Using the entries.path\_lower, attribute of the generated object, the information will be provided to the download method in 
     order to download the list of files specified by the user.
 
-\textbf{dropbox\_download\_path:String="C:/Downloads"} \\
+\textbf{dropbox\_download\_path:String=``C:/Downloads''} \\
     This attribute will hold the path value used for downloading files. The default for this attribute will be the downloads folder. The user 
     will be given the option to specify the download location. This will update the value to their new destination. If the destination does 
     not exist, the user will be prompted.
@@ -86,7 +86,7 @@ to download selected files.
 
 \textbf{dropbox\_get\_files\_list:void} \\
     This method uses the dbx attribute generated after authorization of the Dropbox python SDK has completed. Using a method from the dbx object
-    dbx.files\_list\_folder() with the arguments, "" to indicate root access, and recursive=True, to allow iteration through the entire Dropbox
+    dbx.files\_list\_folder() with the arguments, ``'' to indicate root access, and recursive=True, to allow iteration through the entire Dropbox
     folder system. The call will return and object that will be stored in the dropbox\_get\_files\_listing. Which is then parsed, and placed into
     based off of the entries attribute of the object, and stored locally in dropbox\_get\_files\_list\_result. The method will then iterate through
     the entries, attribute of the object returned, and store them in a List to later be manipulated by the class.
