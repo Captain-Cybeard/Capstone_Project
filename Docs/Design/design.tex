@@ -47,12 +47,56 @@ Subsequent sections will go over the general architecture of the application in 
 by the application will be presented.
 
 \section{Architecture}
-The application will consist of \textbf{\textit{NUMBER OF CLASSES}} in a model, view, controller architecture. The following
-UML diagrams will show the classes and their relationships with each other, along with their attributes and methods.
+The application will consist of ten classes in a model, view, controller architecture. The \textbf{Main} class will be
+the controller for the models (the classes that wrap up the cloud platforms) and the view classes will be the three
+classes that control what the user sees. The following UML diagrams will show the classes and their relationships with
+each other, along with their attributes and methods.
 
 %%
 % UML diagrams go here
 %%
+
+\begin{figure}[H]
+\includegraphics[scale=.25]{des_all}
+\centering
+\caption{The overall application architecture.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_template}
+\centering
+\caption{The template class all platforms follow}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_aws}
+\centering
+\caption{The AWS Class.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_dropbox}
+\centering
+\caption{The Dropbox Class.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_google}
+\centering
+\caption{The GDriveDownloader Class.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_views}
+\centering
+\caption{The Controller and Views Classes.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_json}
+\centering
+\caption{The JSON Classes.}
+\end{figure}
 
 %%
 % Data dictionary section, keep main at the top since it includes the proper section heading
