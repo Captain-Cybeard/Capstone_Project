@@ -27,6 +27,7 @@
 \newpage
 
 \begin{versionhistory}
+	\vhEntry{2.0}{04.11.2020}{KT}{Revisions from review session}
 	\vhEntry{1.0}{03.06.2020}{RB NF TS KT}{First Draft, revisions}
 	\vhEntry{0.5}{03.04.2020}{RB}{Google Section}
 	\vhEntry{0.4}{03.04.2020}{NF}{AWS Section}
@@ -49,7 +50,11 @@ by the application will be presented.
 \section{Architecture}
 The application will consist of ten classes in a model, view, controller architecture. The \textbf{Main} class will be
 the controller for the models (the classes that wrap up the cloud platforms) and the view classes will be the three
-classes that control what the user sees. The following UML diagrams will show the classes and their relationships with
+classes that control what the user sees. The \textit{model} classes (\textbf{AWS}, \textbf{Dropbox}, and \textbf{Google})
+are templates of the \textbf{Template} class. This isn't an actual class that is implemented, however it is the format used
+when creating a cloud platform model and is provided for future maintainers of the project to more easily add classes.
+
+The following UML diagrams will show the classes and their relationships with
 each other, along with their attributes and methods.
 
 %%

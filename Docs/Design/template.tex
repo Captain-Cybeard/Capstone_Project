@@ -1,4 +1,4 @@
-\subsection{class class\_template}
+\subsection{class\_template}
 This class exists to allow future developers to add more cloud platforms to the product. Providing both convention for use, and layout 
 for attribute creation and method creation. Included are basic methods that simplify the authentication. A Method to help format the 
 API return data to comply to the standard specified. A Method to simplify the UI return to parse and complete the download for the user.
@@ -18,11 +18,11 @@ Helping to provide readability to future developers, and indicating how the attr
 This attribute needs to be included in every class, and will default to the Users C:/Downloads, unless specifically alterd by the user 
 through the application itself. 
 
-/textbf{[NAME]\_get\_files\_list\_result:List} \\
+\textbf{[NAME]\_get\_files\_list\_result:List} \\
 This attribute is a recomendation to include in every class as a storage location for the return from the cloud api. This will be 
 utilized in methods included within the template. 
 
-/textbg{[NAME]\_entries\_to\_download\_list:List} \\
+\textbf{[NAME]\_entries\_to\_download\_list:List} \\
 This attribute is a recomendation to include in every class as storage for the return value of the UI for the cloud service. By using
 this attribute, the developer can parse the return in the fasion to which they need to allow downloading the user specified data.
 
@@ -39,22 +39,22 @@ The return data should be saved local to this class in order to be used by futur
 \textbf{[NAME]\_format\_entries\_list(self):type} \\
 This method is used to format the returned data provided by the [NAME]\_get\_files\_list(self) method. The format includes a JSON defined as 
 \begin{verbatim}
-\{
+{
    "path":"",
    "directories":[
-      \{
+      {
          "path":"",
          "directories":[],
          "files":[]
-      \}
+      }
    ],
    "files":[
-      \{
+      {
          "path":"",
          "name":""
-      \}
+      }
    ]
-\}
+}
 \end{verbatim}
 This JSON will be passed to the UI for the user to interact with when selecting what they want to download.
 
