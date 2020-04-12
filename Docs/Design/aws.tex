@@ -1,12 +1,12 @@
 \subsection{AWS}
-The class 'aws' will be the primary handler of the application's interaction with Amazon Web Services (AWS),
+The class `aws' will be the primary handler of the application's interaction with Amazon Web Services (AWS),
 this includes Amazon Elastic Compute Cloud (EC2) and Amazon Simple Storage Service (S3). The application
-can use the 'aws' class to get a list of all available files as well as the ability too download said files, 
+can use the `aws' class to get a list of all available files as well as the ability too download said files, 
 given that the user has access to do both.
 
 \subsubsection{Associations}
 \textbf{Main} \\
-	The AWS class is contained in 'main', which will pass in authentication information and receive information about files 
+	The AWS class is contained in `main', which will pass in authentication information and receive information about files 
 	that a user has access to.
 
 \textbf{AWS} \\
@@ -41,7 +41,7 @@ given that the user has access to do both.
     and keyID will be used to create three class attributes that will be used throughout the aws class. These are s3\_client, ec2\_client, s3\_resource.
     
 \textbf{aws\_get\_files\_list:void} \\
-    Using the \_ec2\_client defined in the authentication method, the 'get\_files\_list' method will be used to retrieve all available files that the user 
+    Using the \_ec2\_client defined in the authentication method, the `get\_files\_list' method will be used to retrieve all available files that the user 
     has access to. This will use the client.describe\_images method as defined in the boto3 specifications.
 
 \textbf{aws\_format\_entries\_list:void} \\

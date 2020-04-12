@@ -17,7 +17,7 @@ fix UML to actually conform to uml notation (in, out, inout)
 
 ----DONE in "main" uml diagram, drop methods and attributes
 
-better names (like the tmplate class) -> explian that platforms come off template & template is provided for future maintainers
+better names (like the template class) -> explain that platforms come off template & template is provided for future maintainers
 
 ----DONE fix LaTeX (there's \textbf[])
 
@@ -27,4 +27,4 @@ remove python shit from design -> language implementation has nothing to do with
 
 for future presentions make slideshow
 
-design doc should have drawup or diagram of views
+----DONE design doc should have drawup or diagram of views
