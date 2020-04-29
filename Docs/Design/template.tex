@@ -1,0 +1,71 @@
+\subsection{class\_template}
+This class exists to allow future developers to add more cloud platforms to the product. Providing both convention for use, and layout 
+for attribute creation and method creation. Included are basic methods that simplify the authentication. A Method to help format the 
+API return data to comply to the standard specified. A Method to simplify the UI return to parse and complete the download for the user.
+Other methods are used for helping simplify the class structure for future development. 
+
+\subsubsection{Associations}
+The association \textbf{UI Interface} is used when developing a new cloud platform class to be added into the application. This will also 
+include any necessary inputs for the developer to adjust inorder for the class to communicate with the UI. 
+
+\subsubsection{Attributes}
+\textbf{[NAME]\_?[METHOD]\_[PARAM]:[TYPE]} \\
+This attribute is describes the convention for future developers to use when describing attributes to add to new classes. 
+If an attribute is not inherent of a method or [METHOD] as described in the attribute, it is passed in with [NAME]\_\_[PARAM].
+Helping to provide readability to future developers, and indicating how the attributes are being used through the application.
+
+\textbf{[NAME]\_\_user\_download\_path:String} \\
+This attribute needs to be included in every class, and will default to the Users C:/Downloads, unless specifically alterd by the user 
+through the application itself. 
+
+\textbf{[NAME]\_get\_files\_list\_result:List} \\
+This attribute is a recomendation to include in every class as a storage location for the return from the cloud api. This will be 
+utilized in methods included within the template. 
+
+\textbf{[NAME]\_entries\_to\_download\_list:List} \\
+This attribute is a recomendation to include in every class as storage for the return value of the UI for the cloud service. By using
+this attribute, the developer can parse the return in the fasion to which they need to allow downloading the user specified data.
+
+\subsubsection{Methods}
+\textbf{[NAME]\_authentication(self):type} \\
+This method is used to simplify api usage for authentication and will interact with the UI in a more seemless manner. Additionall authentication
+methods that need to be created should include [NAME]\_authentication\_[FUNCTION] to provide clear connection to the developer and future 
+developers. This method should only process any necessary procedures when authenticating the user to the cloud service the class is designed around
+
+\textbf{[NAME]\_get\_files\_list(self):type} \\
+This method is used to simplify the api usage for gathering the neccessary metadata acossiated with cloud platform the class is being created for.
+The return data should be saved local to this class in order to be used by future classes. 
+
+\textbf{[NAME]\_format\_entries\_list(self):type} \\
+This method is used to format the returned data provided by the [NAME]\_get\_files\_list(self) method. The format includes a JSON defined as 
+\begin{verbatim}
+{
+   "path":"",
+   "directories":[
+      {
+         "path":"",
+         "directories":[],
+         "files":[]
+      }
+   ],
+   "files":[
+      {
+         "path":"",
+         "name":""
+      }
+   ]
+}
+\end{verbatim}
+This JSON will be passed to the UI for the user to interact with when selecting what they want to download.
+
+\textbf{[NAME]\_select\_entries\_to\_download(self):type} \\
+
+\textbf{[NAME]\_get\_user\_download\_path(self):type} \\
+This method will change the donwload path provided by the user through the UI. The UI will pass the string into this function to change the
+local attibute acossiated with it.
+
+\textbf{[NAME]\_download\_selected\_entries(self, list\_of\_selected\_downloads=null, [NAME]\_path):type} \\
+This method is used to simplify the api usage for downloading. Once a user has selected the items they wish to download, and decided upon the 
+download path. This function will use the cloud platform specified by the class to then download the list of items returned by the UI, into the 
+specified user folder.
+

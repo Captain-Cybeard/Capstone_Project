@@ -1,0 +1,30 @@
+----- TODO List From Design Doc Review -----
+
+Give application catchy name and change everywhere
+
+Don't force self into design pattern like mvc, do what needs to be done
+
+for presentations have pc or something to show larger diagrams
+
+----DONE explain "style"/conventions for the template class (we do it in data dictionary but add to architecture section before uml)
+
+make it more clear on the "workflow" (like changing platform halfway through)
+
+fix UML to actually conform to uml notation (in, out, inout)
+
+----DONE make another diagram with all the json associations
+----DONE diagram readability
+
+----DONE in "main" uml diagram, drop methods and attributes
+
+better names (like the template class) -> explain that platforms come off template & template is provided for future maintainers
+
+----DONE fix LaTeX (there's \textbf[])
+
+use font's like italics instead of ? in template
+
+remove python shit from design -> language implementation has nothing to do with design
+
+for future presentions make slideshow
+
+----DONE design doc should have drawup or diagram of views

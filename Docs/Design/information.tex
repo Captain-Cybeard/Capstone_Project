@@ -1,0 +1,22 @@
+\section{Information Repositories}
+The application uses several different information repositories. There will be one for each platform supported as
+outlined in the \texttt{Requirements Specification} \cite{reqs}. For example, AWS storage will be an information
+repository as well as Dropbox. The user's local hard drive will also be an information repository during
+development and then once the client takes delivery their internal storage will become the information repository.
+
+    \subsection{Cloud Platform Repository}
+    The Cloud Repositories are the storage on the cloud for each platform that the user has files stored on.
+    These files can be any type but will typically be an operating system ISO for the client's use case. These
+    repositories can contain any arbitrary number of files and folders stored within this repository, the users
+    will be able to navigate these through the application and select which ones to download. This information repository
+    will be read only for the application and the user, they will not be deleting or adding contents to the cloud platform.
+    
+    \subsection{Local Storage or Internal Infrastructure}
+    The second type of information repository that the application will contain is the location that the
+    application will download the user selected files from. This will be the user's local storage during the
+    development cycle and in production the client's internal infrastructure will be the repository for these
+    files. This information repository will not be read from, it will only be written too. If the user would like to alter
+    these files then they will need to use another application since the \textit{Downloader} application does not
+    include the user's hard drive in it's scope.
+
+

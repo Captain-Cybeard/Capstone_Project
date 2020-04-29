@@ -1,0 +1,161 @@
+% Compiled with pdflatex
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{vhistory}
+\usepackage[parfill]{parskip}
+\usepackage{float}
+\graphicspath{{../Images/}}
+
+\title{}
+\author{}
+\date{}
+
+\fancyfoot{}
+\fancyhead{}
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\include{titlepage}
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+
+\begin{versionhistory}
+	\vhEntry{2.0}{04.11.2020}{KT}{Revisions from review session}
+	\vhEntry{1.0}{03.06.2020}{RB NF TS KT}{First Draft, revisions}
+	\vhEntry{0.5}{03.04.2020}{RB}{Google Section}
+	\vhEntry{0.4}{03.04.2020}{NF}{AWS Section}
+	\vhEntry{0.3}{03.04.2020}{TS}{Dropbox Section}
+	\vhEntry{0.2}{03.04.2020}{KT}{Filled in sections other than data dictionary}
+	\vhEntry{0.1}{02.25.2020}{KT}{Document Creation}
+\end{versionhistory}
+\newpage
+
+\pagenumbering{arabic}
+\section{Introduction}
+This document will go over the design and architecture for the \textit{Downloader} application that was laid out in
+\texttt{Requirements Specification}\cite{reqs}. The design document will help the client (Cypherpath) and the
+software development team (Captain CyBeard) understand the architecture and functionality of the application.
+
+Subsequent sections will go over the general architecture of the application in unified modeling language
+(UML) followed by a data dictionary. Afterwards the user interface and examples of information repositories needed
+by the application will be presented.
+
+\section{Architecture}
+The application will consist of ten classes in a model, view, controller architecture. The \textbf{Main} class will be
+the controller for the models (the classes that wrap up the cloud platforms) and the view classes will be the three
+classes that control what the user sees. The \textit{model} classes (\textbf{AWS}, \textbf{Dropbox}, and \textbf{Google})
+are templates of the \textbf{Template} class. This isn't an actual class that is implemented, however it is the format used
+when creating a cloud platform model and is provided for future maintainers of the project to more easily add classes.
+
+The following UML diagrams will show the classes and their relationships with
+each other, along with their attributes and methods.
+
+%%
+% UML diagrams go here
+%%
+
+\begin{figure}[H]
+\includegraphics[scale=.25]{des_all}
+\centering
+\caption{The overall application architecture.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_template}
+\centering
+\caption{The template class all platforms follow}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_aws}
+\centering
+\caption{The AWS Class.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_dropbox}
+\centering
+\caption{The Dropbox Class.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_google}
+\centering
+\caption{The GDriveDownloader Class.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_views}
+\centering
+\caption{The Controller and Views Classes.}
+\end{figure}
+
+\begin{figure}[p]
+\includegraphics[scale=.5]{des_json}
+\centering
+\caption{The JSON Classes.}
+\end{figure}
+
+%%
+% Data dictionary section, keep main at the top since it includes the proper section heading
+%%
+
+\include{main}
+\include{directory}
+\include{file}
+\include{template}
+\include{dropbox}
+\include{aws}
+\include{google}
+\include{platform_selection}
+\include{authentication}
+\include{file_selection}
+\include{user}
+\include{information}
+
+\newpage
+\pagenumbering{gobble}
+    \begin{thebibliography}{7}
+    \bibitem{pp}
+    Ryan Breitenfeldt, Noah Farris, Trevor Surface, Kyle Thomas.
+    \textit{Project Plan}.
+    [\textit{Project Plan for Downloader Application}] 2019.
+
+    \bibitem{reqs}
+    Ryan Breitenfeldt, Noah Farris, Trevor Surface, Kyle Thomas.
+    \textit{Requirements Specification}.
+    [\textit{Requirements Specification for Downloader Application}] 2019.
+
+    \bibitem{prot}
+    Ryan Breitenfeldt, Noah Farris, Trevor Surface, Kyle Thomas.
+    \textit{Prototype}.
+    [\textit{Prototype Screenshots for Downloader Application}] 2019.
+
+
+    \bibitem{cypherpath}
+    Cypherpath.com. (2019). Cypherpath, Inc. [online] Available at: https://www.cypherpath.com/ [Accessed 21 Oct. 2019].
+
+    \bibitem{aws}
+    Amazon Web Services, Inc. (2019). Amazon Web Services (AWS) - Cloud Computing Services. [online] Available at: https://aws.amazon.com/ [Accessed 10 Oct. 2019].
+
+%    \bibitem{vmware}
+%    VMware. (2019). VMware – Cloud, Mobility, Networking \& Security Solutions. [online] Available at: https://www.vmware.com/ [Accessed 15 Nov. 2019].
+
+    \bibitem{python}
+    Python.org. (2019). Welcome to Python.org. [online] Available at: https://www.python.org/ [Accessed 6 Nov. 2019].
+
+    \bibitem{django}
+    Djangoproject.com. (2019). The Web framework for perfectionists with deadlines \textbar\ Django. [online] Available at: https://www.djangoproject.com/ [Accessed 6 Nov. 2019].
+    \end{thebibliography}
+
+%\appendix
+%\section{Appendix}
+
+\end{document}

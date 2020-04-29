@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{vhistory}
+\usepackage[parfill]{parskip}
+\graphicspath{{../Images/}}
+
+\renewcommand{\baselinestretch}{1.5}
+
+% Set fancy looking header/footer and move page number to the right
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+
+\patchcmd{\section}{-3.5ex \@plus -1ex \@minus -.2ex}{-3.5ex \@plus -1ex \@minus -.2ex\setlength{\leftskip}{0cm}}{}{}
+\patchcmd{\subsection}{-3.25ex\@plus -1ex \@minus -.2ex}{3.25ex\@plus -1ex \@minus -.2ex\setlength{\leftskip}{1cm}}{}{}
+\patchcmd{\subsubsection}{1.5ex \@plus .2ex}{1.5ex \@plus .2ex\setlength{\leftskip}{2cm}}{}{}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \include{titlepage}
+
+
+    \tableofcontents
+    \newpage
+    \listoffigures
+
+
+    \newpage
+    \begin{versionhistory}
+        \vhEntry{0.1}{04.20.2020}{KT}{Document Creation}
+    \end{versionhistory}
+    \newpage
+
+
+    \pagenumbering{arabic}
+    \section{Introduction}
+        This document is an instruction manual for the users on how to use the \textit{Cloud Backup} software. There will be three parts.
+        The first part will be how user's of application will interact with the application with the second part covering how system
+        administrators will deploy the application. Followed by the third part, which is how developers will expand the application to
+        include more cloud platforms.
+
+    \section{Users}
+      \subsection{Invocation}
+
+      \subsection{Stopping}
+
+      \subsection{Selecting a Cloud Provider}
+
+      \subsection{Authenticating to the Cloud Platform}
+
+      \subsection{Selecting and Downloading Files}
+
+    \section{Administrators}
+      \subsection{Starting the Application}
+
+      \subsection{Stopping the Application}
+
+    \section{Developers}
+      \subsection{Adding a Platform}
+
+      \subsubsection{Views}
+
+      \subsubsection{Models}
+
+\end{document}

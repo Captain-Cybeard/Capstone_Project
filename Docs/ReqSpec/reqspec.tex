@@ -81,6 +81,8 @@
 	
     \section{Overview}
     The purpose of this application is to allow users to download virtual disk images from online cloud platforms, to the Resiliency Platform (the application delivered will only download the files to local storage).
+    Currently, Cypherpath customers manually visit each of their cloud platforms and download their files, then upload them into the Resiliency Platform. This application will act as middleware and direct the download
+    into the Resiliency Platform.
     The application itself will operate as a web server using Python3 \cite{python} and Django2 \cite{django}. Users will start the application by navigating to the URL pointing to the application.
     Once at the main page the user will
     provide a URL to their account on an external cloud platform. Once the application processes the URL to determine which cloud platform the URL points to, the user is
@@ -180,12 +182,6 @@
 
             This page that presents the user with their directory structure will also contain a back button, in addition to the download button that allows them to visit the main page and enter a URL to a different
             cloud platform.
-
-            %%% This section just repeats the section above
-            %\subsubsection{Download} 
-            %The user will be provided with a interface that shows them the file structure of their cloud storage. A component of the display will be the download button. If the user wants to verify
-            %their files were downloaded properly the files will be neatly displayed to do so. Otherwise when the user is ready to download they will have to click the download button. The download itself 
-            %will default to their predetermined browser download location. The user will see total download completed. The web browser's build in download manager will display the download progress.
 
             \subsubsection{Error Catching}
             Errors will be detected through the various aspects of the program. If the users provides an invalid URL or the URL cannot be located, an error message will be displayed and they will be presented with

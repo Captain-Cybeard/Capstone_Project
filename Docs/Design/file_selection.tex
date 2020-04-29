@@ -1,0 +1,18 @@
+\subsection{File\_Selection}
+The class \textbf{File\_Selection} is a view in the MVC design pattern that will display
+the available files to download to the user and allow the user to select the files.
+
+\subsubsection{Associations}
+\textbf{Main} \\
+The File\_Selection class is contained in the Main class.
+
+\subsubsection{Attributes}
+\textbf{available\_files: Directory} \\
+The attribute \textbf{available\_files} contains the files that on the cloud platform to
+download.
+
+\subsubsection{Methods}
+\textbf{download(INOUT: dirs: Directory)} \\
+The \textbf{download} method will send a message back to the \textbf{Main} class
+(the controller) containing a \textbf{Directory} class with just the files that the user
+has selected to download.
