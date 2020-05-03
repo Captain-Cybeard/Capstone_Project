@@ -1,6 +1,11 @@
+----- TODO For Turning In -----
+Change classes to take out json and reflect reality
+
+
+
 ----- TODO List From Design Doc Review -----
 
-Give application catchy name and change everywhere
+----DONE Give application catchy name and change everywhere
 
 Don't force self into design pattern like mvc, do what needs to be done
 
@@ -21,7 +26,7 @@ better names (like the template class) -> explain that platforms come off templa
 
 ----DONE fix LaTeX (there's \textbf[])
 
-use font's like italics instead of ? in template
+----DONE use font's like italics instead of ? in template
 
 remove python shit from design -> language implementation has nothing to do with design
 

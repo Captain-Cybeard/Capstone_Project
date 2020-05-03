@@ -27,6 +27,7 @@
 \newpage
 
 \begin{versionhistory}
+	\vhEntry{3.0}{05.03.2020}{KT}{Revisions to reflect reality}
 	\vhEntry{2.0}{04.11.2020}{KT}{Revisions from review session}
 	\vhEntry{1.0}{03.06.2020}{RB NF TS KT}{First Draft, revisions}
 	\vhEntry{0.5}{03.04.2020}{RB}{Google Section}
@@ -57,12 +58,8 @@ when creating a cloud platform model and is provided for future maintainers of t
 The following UML diagrams will show the classes and their relationships with
 each other, along with their attributes and methods.
 
-%%
-% UML diagrams go here
-%%
-
 \begin{figure}[H]
-\includegraphics[scale=.25]{des_all}
+\includegraphics[scale=.65]{des_all}
 \centering
 \caption{The overall application architecture.}
 \end{figure}
@@ -97,19 +94,19 @@ each other, along with their attributes and methods.
 \caption{The Controller and Views Classes.}
 \end{figure}
 
-\begin{figure}[p]
-\includegraphics[scale=.5]{des_json}
-\centering
-\caption{The JSON Classes.}
-\end{figure}
+%\begin{figure}[p]
+%\includegraphics[scale=.5]{des_json}
+%\centering
+%\caption{The JSON Classes.}
+%\end{figure}
 
 %%
 % Data dictionary section, keep main at the top since it includes the proper section heading
 %%
 
 \include{main}
-\include{directory}
-\include{file}
+%\include{directory}
+%\include{file}
 \include{template}
 \include{dropbox}
 \include{aws}
