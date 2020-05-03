@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{vhistory}
 \usepackage[parfill]{parskip}
+\usepackage{float}
 \graphicspath{{../Images/}}
 
 \renewcommand{\baselinestretch}{1.5}
@@ -58,6 +59,12 @@
       On the main page of the application the user will be presented with a pull down menu containing each cloud platform that is supported by the application. Selecting
       one of these options and clicking the ``Submit'' button will proceed the user to the next step (authenticating to the cloud platform).
 
+      \begin{figure}[H]
+        \includegraphics[scale=.75]{ug_cloud}
+        \centering
+        \caption{The cloud platform selection screen.}
+      \end{figure}
+
       \subsection{Authenticating to the Cloud Platform}
       After selecting a platform the user will redirected to an authentication page. Depending on the platform this page will be different and require different authentication methods.
       For example, the Amazon Web Services platform will direct the user to a page where they will enter their AWS client secret and AWS client token into a text box. Other platforms such as Google
@@ -77,6 +84,18 @@
 
       Both of the screens mentioned in this section also contain a ``Start Over'' button that will allow the user to return to the main screen where they select a platform. This makes it easier to quickly visit all of
       their platforms to import their files.
+
+      \begin{figure}[p]
+        \includegraphics[scale=.75]{ug_select}
+        \centering
+        \caption{The file selection screen.}
+      \end{figure}
+
+      \begin{figure}[p]
+        \includegraphics[scale=.75]{ug_success}
+        \centering
+        \caption{The files downloaded screen.}
+      \end{figure}
 
     \section{Administrators}
     The administrators or operations team for the application has a few things that need consideration but is otherwise straight forward.
