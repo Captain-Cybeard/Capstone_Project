@@ -26,7 +26,10 @@ The attribute GDriveDownloader\_service holds the built service.
 The attribute GDriveDownloader\_file\_List holds the list of files from Google Drive.
 
 \textbf{GDriveDownloader\_json} \\
-The attribute GDriveDownloader\_json holds the JSON needed by the UI. 
+The attribute GDriveDownloader\_json holds the JSON needed by the UI.
+
+\textbf{GDriveDownloader\_files\_to\_download} \\
+​The attribute GDriveDownloader\_files\_to\_download holds a list of dictionaries.
 %​
 \subsubsection{Methods}
 \textbf{GDriveDownloader\_authentication} \\
@@ -42,7 +45,19 @@ This method loads the token from a file.
 This method builds the service from the scope and the authentication token.
 
 \textbf{GDriveDownloader\_\_download\_File} \\
-This method downloads a file with the selected file ids. 
+This method loops overGDriveDownloader\_files\_to\_download and downloads the files to the working dictionary. 
 
 \textbf{GDriveDownloader\_\_get\_Files} \\
 This method queries Google Drive for the files stored in the user's Google account. It will also create the JSON for the UI and store it in GDriveDownloader\_json.   
+
+\textbf{GDriveDownloader\_add\_file\_to\_download} \\
+This method takes a dictionary with keys 'name' and 'id' as input and appends it to overGDriveDownloader\_files\_to\_download.
+
+\textbf{GDriveDownloaded\_authentication\_flow} \\
+This method creates the autentication flow using the seceret from google.
+
+\textbf{GDriveDownloaded\_authentication\_start} \\
+This method get the url to redirect to google's login page.
+
+\textbf{GDriveDownloaded\_authentication\_finish} \\
+This method gets a json with the access token, turns it into a Credential object, builds the service and gets the files. It then redircts to the files page. 
