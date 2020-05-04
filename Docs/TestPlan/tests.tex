@@ -1,31 +1,33 @@
 \documentclass{article}
 \usepackage[margin=1.25in]{geometry}
-\usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage[parfill]{parskip}
 \usepackage{float}
+\usepackage{pdflscape}
 \graphicspath{{../Images/}}
 
-% Set fancy looking header/footer and move page number to the right
-\pagestyle{fancy}
-\fancyhead{}
-\fancyfoot{}
-\fancyfoot[R]{\thepage}
 
 \begin{document}
     \pagenumbering{gobble}
     \include{titlepage}
 
+    \begin{landscape}
     \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|}
       \hline
       \textbf{Test ID} & \textbf{Requirement} & \textbf{Result} & \textbf{Test Case} & \textbf{Expected} & \textbf{Actual} \\ [.5ex]
       \hline
-      01 & a & b & c & d & e \\
+      01 & Users selected files download from Dropbox & PASS & Select dropbox files to download & files downloaded & files downloaded \\
+      02 & Users selected files download from Google Drive & PASS & Select Google Drive files to download & files downloaded & files downloaded \\
+      03 & Users selected files download from AWS & PASS & Select AWS files to download & files downloaded & files downloaded \\
+      04 & Can view user's Dropbox files & PASS & Authenticate to Dropbox & list of files & list of files \\
+      05 & Can view user's Google Drive files & PASS & Authenticate to Google & list of files & list of files \\
+      06 & Can view user's AWS files & PASS & Authenticate to AWS & list of files & list of files \\
       \hline
 
       \hline
     \end{tabular}
     \end{center}
+    \end{landscape}
 
 \end{document}
