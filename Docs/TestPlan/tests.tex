@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[margin=1.25in]{geometry}
+\usepackage[margin=.5in]{geometry}
 \usepackage{graphicx}
 \usepackage[parfill]{parskip}
 \usepackage{float}
@@ -13,9 +13,9 @@
 
     \begin{landscape}
     \begin{center}
-    \begin{tabular}{|c|c|c|c|c|c|}
+    \begin{tabular}{|l|l|l|l|l|l|}
       \hline
-      \textbf{Test ID} & \textbf{Requirement} & \textbf{Result} & \textbf{Test Case} & \textbf{Expected} & \textbf{Actual} \\ [.5ex]
+      \textbf{ID} & \textbf{Requirement} & \textbf{Result} & \textbf{Test Case} & \textbf{Expected} & \textbf{Actual} \\ [.5ex]
       \hline
       01 & Users selected files download from Dropbox & PASS & Select dropbox files to download & files downloaded & files downloaded \\
       02 & Users selected files download from Google Drive & PASS & Select Google Drive files to download & files downloaded & files downloaded \\
@@ -23,6 +23,19 @@
       04 & Can view user's Dropbox files & PASS & Authenticate to Dropbox & list of files & list of files \\
       05 & Can view user's Google Drive files & PASS & Authenticate to Google & list of files & list of files \\
       06 & Can view user's AWS files & PASS & Authenticate to AWS & list of files & list of files \\
+      07 & Supported platforms display in menu & PASS & Navigate to app & Dropbox, Google, AWS & Dropbox, Google, AWS \\
+      08 & Can navigate to app from localhost:8000 & PASS & Navigate to localhost:8000 & Index page & Index page \\
+      09 & Navigating back to application starts over & PASS & Navigate to localhost:8000 & Index page & Index page \\
+      10 & User redirected to Google authentication & PASS & Select Google Drive & Google Login Page & Google Login Page \\
+      11 & User redirected to Dropbox authentication & PASS & Select Dropbox & Dropbox login page & Dropbox login page \\
+      12 & User redirected to AWS authentication & PASS & Select AWS & AWS login page & AWS login page \\
+      13 & Emtpy pulldown menu w/o platforms enabled & PASS & Navigate to app w/o platforms & Empty menu & Empty menu \\
+      14 & Empty list of files displays & PASS & Navigate to platform without files & No files message & No files message \\
+      15 & Select All button selects all files & PASS & Press select all button & All files selected & All files selected \\
+      16 & No files are downloade when none selected & PASS & Press download button w/o files selected & No files downloaded & no files downloaded \\
+      17 & Start Over button on files returns to index & PASS & Press start over button & redirect to main menu & redirect to main menu \\
+      18 & Start Over button on downloaded files returns to index & PASS & Press start over button & redirect to main menu & redirect to main menu \\
+      19 & Application is standalone django app & PASS & Root URI and \texttt{/cloud/} direct to app & Directed to main page & Directed to main page \\
       \hline
 
       \hline
