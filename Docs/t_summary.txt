@@ -1,0 +1,5 @@
+For the project completed the Overview of the requirments specification, additionally wrote the Operations Section estimated 
+around 6 hours to complete. Worked on revisions and editing for grammar and clarity estimated around 5 hours, through several 
+sessions. Worked on research for both Django2 and Python3 Authentication, estimated 6 hours. Created base Django project to provide 
+testing for future development on the framework, estimated 5 hours. Researched REST API's for both VMware and Amazon Web Services, 
+estimated about 6 hours. 
