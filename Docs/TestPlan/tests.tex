@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{float}
+\graphicspath{{../Images/}}
+
+% Set fancy looking header/footer and move page number to the right
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \include{titlepage}
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      \textbf{Test ID} & \textbf{Requirement} & \textbf{Result} & \textbf{Test Case} & \textbf{Expected} & \textbf{Actual} \\ [.5ex]
+      \hline
+      01 & a & b & c & d & e \\
+      \hline
+
+      \hline
+    \end{tabular}
+    \end{center}
+
+\end{document}
