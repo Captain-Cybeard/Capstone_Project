@@ -3,11 +3,11 @@ This class exists to allow future developers to add more cloud platforms to the 
 for attribute creation and method creation. Included are basic methods that simplify the authentication. A Method to help format the 
 API return data to comply to the standard specified. A Method to simplify the UI return to parse and complete the download for the user.
 Other methods are used for helping simplify the class structure for future development. 
-​
+
 \subsubsection{Associations}
 The association \textbf{UI Interface} is used when developing a new cloud platform class to be added into the application. This will also 
-include any necessary inputs for the developer to adjust inorder for the class to communicate with the UI. 
-​
+include any necessary inputs for the developer to adjust in order for the class to communicate with the UI. 
+
 
 \subsubsection{Attributes}
 \textbf{[Platform\_NAME]\_[METHOD]\_[PARAM]:[TYPE]} \\
@@ -16,93 +16,87 @@ If an attribute is not inherent of a method or [METHOD] as described in the attr
 Helping to provide readability to future developers, and indicating how the attributes are being used through the application.
 
 \textbf{[\_\_[Platform\_NAME]\_\_user\_download\_path:String} \\
-This attribute needs to be included in every class, and will default to the Users C:/Downloads, unless specifically alterd by the user 
+This attribute needs to be included in every class, and will default to the Users C:/Downloads, unless specifically altered by the user 
 through the application itself. 
 
 \textbf{[\_\_[Platform\_NAME]\_get\_files\_list\_result:List} \\
-This attribute is a recomendation to include in every class as a storage location for the return from the cloud api. This will be 
+This attribute is a recommendation to include in every class as a storage location for the return from the cloud API. This will be 
 utilized in methods included within the template. 
 
 \textbf{\_\_[Platform\_NAME]\_entries\_to\_download\_list:List} \\
-This attribute is a recomendation to include in every class as storage for the return value of the UI for the cloud service. By using
-this attribute, the developer can parse the return in the fasion to which they need to allow downloading the user specified data.
+This attribute is a recommendation to include in every class as storage for the return value of the UI for the cloud service. By using
+this attribute, the developer can parse the return in the fashion to which they need to allow downloading the user specified data.
 
 \textbf{[Platform\_NAME]\_format\_dict:Dictionary} \\
-This attribute is a recomendation to include in every class to store the formated files into a folder/file dictionary that will allow 
-users to view their files within included directroies. Currently the application is not using the method to show folders for users.
+This attribute is a recommendation to include in every class to store the formated files into a folder/file dictionary that will allow 
+users to view their files within included directories. Currently the application is not using the method to show folders for users.
 
 \textbf{[Platform\_NAME]\_flat\_dict:Dictionary} \\
-This attribute is a recomendation to include in every class to store a 'flattened' Dictionary where only the files and their paths are 
+This attribute is a recommendation to include in every class to store a `flattened' Dictionary where only the files and their paths are 
 stored. By using this attribute the user will only see their files without the folders that they are included with. 
 
-\subsubsection{Methods} \\
-   The three following commands are used for any application that has a supported SDK for OAuth 2 authentication. If this is not present
-   within the platform being added, an authentication method will need to be created seperately without the auth\_ methods.
+\subsubsection{Methods}
+The three following commands are used for any application that has a supported SDK for OAuth 2 authentication. If this is not present
+within the platform being added, an authentication method will need to be created separately without the auth\_ methods.
 
 \textbf{[Platform\_NAME]\_authentication\_flow(): In:Request} \\
-This function call requires a redirect_uri that may need to need to be specified within the app console 
+This function call requires a redirect\_uri that may need to need to be specified within the app console 
 of the platform being used. This class should return the Flow component of the OAuth2 authentication. This 
-will likey need a request.session to help manage state.
+will likely need a request.session to help manage state.
 
 \textbf{[Platform\_NAME]\_authentication\_start(): In:Request} \\
 This function will initiate the starting parameters for the OAuth2 authentication to use this 
-capability appropriately, after this method is created, this object will need to be instatiated
+capability appropriately, after this method is created, this object will need to be instantiated
 within the veiws.py script. Additionally the urls.py/urlpattern needs to be updated with the following: \\
-  path('[Platform_NAME]-auth-start', views.[Platform_NAME].[Platform_NAME]_authentication_start) \\
+  path('[Platform\_NAME]-auth-start', views.[Platform\_NAME].[Platform\_NAME]\_authentication\_start) \\
 When the user selects the new plaform, the Views Index class will need to return a redirect function
-redirect('[Platform_NAME]-auth-start'). Finally this method should instatiate a redirect_url to created by the 
-authentication_flow method noted previously. The return will need a django.shortcuts.redirect() to the redirect_url 
+redirect('[Platform\_NAME]-auth-start'). Finally this method should instantiate a redirect\_url to created by the 
+authentication\_flow method noted previously. The return will need a django.shortcuts.redirect() to the redirect\_url 
 to allow the user to log into the new platform.
 
 \textbf{[Platform\_NAME]\_authentication\_finish(): In:Request} \\
-This fucntion will finalize the OAuth2 authentication. After this method is created, this object will need to be instatiated
+This function will finalize the OAuth2 authentication. After this method is created, this object will need to be instantiated
 within the veiws.py script. Additionally the urls.py/urlpattern needs to be updated with the following: \\
-  path('[Platform_NAME]-auth-finish', views.[Platform_NAME].[Platform_NAME]_authentication_finish) \\
-The authentication_flow, may require a redirect_uri that includes the full uri to the [Platform_NAME]-auth-finish
+  path('[Platform\_NAME]-auth-finish', views.[Platform\_NAME].[Platform\_NAME]\_authentication\_finish) \\
+The authentication\_flow, may require a redirect\_uri that includes the full uri to the [Platform\_NAME]-auth-finish
 This function will catch any errors that arise within the OAuth2 authentication flow. 
-This function will also call all neccessary function to gather files and folders of the application users platform.
+This function will also call all necessary function to gather files and folders of the application users platform.
 The returned object will then need to be formated into either a dict specified as: \\
   \{'path':'', 'dirs':[], 'files':[]\} \\
    In which every dir contains the same dict and dict list for subsequent directories
-Currently the software requires a flat_dict, in which all files are pulled out along with their full path and any required 
-attributes neccessary for downloading. The flact dict will be written as: \\
+Currently the software requires a flat\_dict, in which all files are pulled out along with their full path and any required 
+attributes necessary for downloading. The flat dict will be written as: \\
   \{'file':[]\} \\ 
 with all the attributes required for downloading files.
 
 \textbf{[NAME]\_get\_files\_list()} \\
-This method is used to simplify the api usage for gathering the neccessary metadata acossiated with cloud platform the class is being created for.
+This method is used to simplify the API usage for gathering the necessary metadata associated with cloud platform the class is being created for.
 The return data should be saved local to this class in order to be used by future classes. 
 
 \textbf{[NAME]\_format\_entries\_list():Object JSON} \\
 This method is used to format the returned data provided by the [Platform\_NAME]\_get\_files\_list(self) method. The format includes a Dictionary defined as 
-\\
-\{
+\begin{verbatim}
+{
    "path":"",
    "dirs":[
-      \{
+      {
          "path":"",
          "dirs":[],
          "files":[]
-      \}
+      }
    ],
    "files":[
-      \{
+      {
          "path":"",
          "name":""
-      \}
+      }
    ]
-\}
-\\
+}
+\end{verbatim}
 This Dictionary will be passed to the UI for the user to interact with when selecting what they want to download.
 
 \textbf{[NAME]\_download\_selected\_entries(in list\_of\_selected\_downloads:Object JSON, [NAME]\_path:String):type} \\
-​This method is used to simplify the api usage for downloading. Once a user has selected the items they wish to download, and decided upon the 
+This method is used to simplify the API usage for downloading. Once a user has selected the items they wish to download, and decided upon the 
 download path. This function will use the cloud platform specified by the class to then download the list of items returned by the UI, into the 
 specified user folder.
 
-% percent signs are comments
-% \textbf{} makes the stuff in {} bold
-% \textit{} is italics
-% \\ makes a new line
-% space between lines makes a new paragraph
-% please escape underscores and & with a backslash

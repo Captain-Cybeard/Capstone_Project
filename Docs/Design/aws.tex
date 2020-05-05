@@ -28,30 +28,24 @@ given that the user has access to do both.
     not exist, the user will be prompted.
 
 \subsubsection{Methods}
-\textbf{aws\_init:void} \\
+\textbf{aws\_init} \\
     This method passes a AWS access key and AWS access key\_id to Amazons boto3 module, which is used to interact with AWS through python. The key 
     and keyID will be used to create three class attributes that will be used throughout the aws class. These are s3\_client, ec2\_client, s3\_resource.
     
 \textbf{aws\_get\_image\_list:json} \\
-    Using the \_ec2\_client defined in the __init__ method, the `get\_image\_list' method will be used to retrieve all available files that the user 
+    Using the \_ec2\_client defined in the \_\_init\_\_ method, the `get\_image\_list' method will be used to retrieve all available files that the user 
     has access to. This will use the client.describe\_images method as defined in the boto3 specifications. This method is used by the Files view.
 
 \textbf{aws\_get\_buckets:json} \\
-    Using the \_s3\_client defined in the __init__  method, the `get\_buckets' method will be used to retrieve all available buckets that the user 
+    Using the \_s3\_client defined in the \_\_init\_\_  method, the `get\_buckets' method will be used to retrieve all available buckets that the user 
     has access to.
 
 \textbf{aws\_list\_images\_in\_bucket:json} \\
     Uses \_s3\_resource to list all images contained within a bucket, this method will return a JSON dict.
 
-\textbf{aws\_export\_to\_bucket:void} \\
+\textbf{aws\_export\_to\_bucket} \\
     This method is optionally used and gives a developer the ability to export images to a bucket.
 
-\textbf{aws\_download\_images:void} \\
+\textbf{aws\_download\_images} \\
     This method will use the \_s3\_resource.download\_file() method within a for loop specified within the Files view to download all selected images.
 
-% percent signs are comments
-% \textbf{} makes the stuff in {} bold
-% \textit{} is italics
-% \\ makes a new line
-% space between lines makes a new paragraph
-% please escape underscores and & with a backslash

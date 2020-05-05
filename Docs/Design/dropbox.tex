@@ -77,39 +77,33 @@ to download selected files.
     not exist, the user will be prompted.
 
 \subsubsection{Methods}
-\textbf{dropbox\_authentication:void} \\
+\textbf{dropbox\_authentication} \\
     This method implements the authentication pattern user by the Dropbox Python SDK. This method will generate an authorization\_flow object
     that will then generate a url link when instantiated. The user will then provide credentials for the link and copy to authorization\_key 
     to be passed into the program. When integrated into the website, this will cause a redirect to a Dropbox login then load the key without 
     user interaction. After a valid key is provided, given no error is displayed to the user, the key will be stored in a dbx attribute, detailed 
     above.  
 
-\textbf{dropbox\_get\_files\_list:void} \\
+\textbf{dropbox\_get\_files\_list} \\
     This method uses the dbx attribute generated after authorization of the Dropbox python SDK has completed. Using a method from the dbx object
     dbx.files\_list\_folder() with the arguments, ``'' to indicate root access, and recursive=True, to allow iteration through the entire Dropbox
     folder system. The call will return and object that will be stored in the dropbox\_get\_files\_listing. Which is then parsed, and placed into
     based off of the entries attribute of the object, and stored locally in dropbox\_get\_files\_list\_result. The method will then iterate through
     the entries, attribute of the object returned, and store them in a List to later be manipulated by the class.
 
-\textbf{dropbox\_format\_entries\_list:void} \\
+\textbf{dropbox\_format\_entries\_list} \\
     This function uses the local dropbox\_get\_files\_list\_result to sort the data and reorganize it. The ordering will be a hierarchal order, listing 
     folders and the included subfolders and files. This will then be stored in JSON format to be used by the website to display the data in an
     accordion list which will expand the structures to display subfolders and files included within selected folder. Providing an easier to manage
     interface for the user.
 
-\textbf{dropbox\_select\_entries\_to\_download:void} \\
+\textbf{dropbox\_select\_entries\_to\_download} \\
     This method will be used to store the indices selected by the user for the files they wish to download. Using key values generated through 
     the UI to then create a new list Dropbox\_entries\_to\_download\_list in which the selections will be saved local to the class.
 
-\textbf{dropbox\_download\_selected\_entries:void} \\
+\textbf{dropbox\_download\_selected\_entries} \\
     This method will use the dbx.files\_download\_to\_file(). It will use the locally saved attribute dropbox\_entries\_to\_download\_list to
     iterate through, calling the Api using the user defined dropbox\_download\_path. The function will then download all the files within the 
     list, to the location specified. The user will be prompted with an error if a file is not downloadable, or if a download failed for other 
     reasons.
 
-% percent signs are comments
-% \textbf{} makes the stuff in {} bold
-% \textit{} is italics
-% \\ makes a new line
-% space between lines makes a new paragraph
-% please escape underscores and & with a backslash
